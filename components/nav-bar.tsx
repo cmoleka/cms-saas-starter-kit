@@ -5,33 +5,41 @@ import { siteConfig } from "@/config/site"
 
 import { Icons } from "./icons"
 import MaxWidthWrapper from "./max-width-wrapper"
+import MobileNav from "./mobile-nav"
+import { ThemeToggle } from "./theme-toggle"
 import { Button } from "./ui/button"
+import { Typography } from "./ui/typography"
 import UserAccountNav from "./user-account-nav"
 
-// import MobileNav from "./mobile-nav"
 // import UserAccountNav from "./user-account-nav"
 
 const Navbar = async () => {
   const user = await currentUser()
 
   return (
-    <nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
+    <nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 dark:border-slate-500 bg-white/75 dark:bg-slate-900 backdrop-blur-lg transition-all">
       <MaxWidthWrapper>
-        <div className="flex h-14 items-center justify-between border-b border-zinc-200">
-          <Link href="/" className="flex z-40 font-semibold">
-            <span>{siteConfig.name}</span>
+        <div className="flex h-14 items-center justify-between">
+          <Link href="/" className="flex z-40">
+            <Typography
+              variant="lead"
+              component="span"
+              className="font-bold uppercase"
+            >
+              <span>{siteConfig.name}</span>
+            </Typography>
           </Link>
 
-          {/* <MobileNav isAuth={!!user} /> */}
+          <MobileNav isAuth={!!user?.id} />
 
           <div className="hidden items-center space-x-4 sm:flex">
+            <Link href="/pricing">
+              <Typography variant="link" component="span">
+                Pricing
+              </Typography>
+            </Link>
             {!user ? (
               <>
-                <Link href="/pricing">
-                  <Button size="default" variant="link">
-                    Pricing
-                  </Button>
-                </Link>
                 <SignInButton>
                   <Button size="default">Sign in</Button>
                 </SignInButton>
@@ -44,9 +52,9 @@ const Navbar = async () => {
               </>
             ) : (
               <>
-                <Link href="/dashboard">
-                  <Button variant="ghost">Dashboard</Button>
-                </Link>
+                <Button variant="ghost" asChild>
+                  <Link href="/dashboard">Dashboard</Link>
+                </Button>
 
                 <UserAccountNav
                   name={
@@ -58,6 +66,7 @@ const Navbar = async () => {
                 />
               </>
             )}
+            <ThemeToggle />
           </div>
         </div>
       </MaxWidthWrapper>

@@ -7,7 +7,7 @@ export const testRouter = router({
     getHelloWorld: publicProcedure.query(() => {
         return { message: "Hello world!" }
     }),
-    getSecretMessage: protectedProcedure.query(({ ctx }) => {
+    getSecretMessage: protectedProcedure.query(() => {
         return { message: "You are authenticated!" }
     })
 })

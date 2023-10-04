@@ -1,5 +1,6 @@
 import Image from "next/image"
 
+import MaxWidthWrapper from "@/components/max-width-wrapper"
 import TestMessage from "@/components/test-message"
 
 export default function Home() {

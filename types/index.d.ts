@@ -23,22 +23,70 @@ export type TierPlanConstant = {
     promoted: boolean;
 };
 
+export type TierPricingData = {
+    plans: {
+        [key: string]: TierPlanModel;
+    }
+}
+
+export type TierPlanModel = {
+    title: string;
+    interval?: string;
+    features: {
+        [key: string]: {
+            title: string;
+            base: number;
+            tiers?: {
+                price: number;
+                limit: number;
+            }[];
+        };
+    };
+}
+
 export type PricingTableData = {
     planId: string;
     currency: string; // usd
-    interval: string; // monthly
+    interval?: string; // monthly
     promoted: boolean;
     name: string;
     base: number;
     features: string[];
-    extraUsageRate?: number | undefined;
 };
 
 export type CurrentPlan = {
     planId: PlanName;
     currency: string; // usd
-    interval: string; // monthly
+    interval?: string; // monthly
     name: string;
     base: number;
-    extraUsageRate?: number | undefined;
 };
+
+// Resend Email Types
+
+export type ResendEventTypes =
+    | 'email.sent'
+    | 'email.delivered'
+    | 'email.delivery_delayed'
+    | 'email.complained'
+    | 'email.bounced'
+    | 'email.opened'
+    | 'email.clicked';
+
+export interface ResendWebhookEvent {
+    created_at: string;
+    data: {
+        created_at: string;
+        email_id: string;
+        from: string;
+        subject: string;
+        to: string[];
+    };
+    type: ResendEventTypes;
+}
+
+export interface ResendEmail {
+    to: string[];
+    subject: string;
+    react: React.ReactElement;
+}

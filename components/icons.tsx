@@ -1,6 +1,12 @@
 import {
+  ActivitySquareIcon,
+  BrushIcon,
+  CheckSquareIcon,
+  ChevronRightIcon,
+  InboxIcon,
   LucideProps,
   Moon,
+  SquareStackIcon,
   SunMedium,
   Twitter,
   User,
@@ -8,11 +14,18 @@ import {
 } from "lucide-react"
 
 export type Icon = LucideIcon
+export type IconProps = LucideProps
 
 export const Icons = {
+  inbox: InboxIcon,
+  chevronRight: ChevronRightIcon,
   user: User,
+  theme: BrushIcon,
+  analytics: ActivitySquareIcon,
+  integrations: SquareStackIcon,
   sun: SunMedium,
   moon: Moon,
+  checkBox: CheckSquareIcon,
   twitter: Twitter,
   logo: (props: LucideProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>

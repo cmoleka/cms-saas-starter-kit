@@ -4,8 +4,7 @@ import { TierPlanConstant } from "@/types";
 
 // Plans
 export const TIER_FREE_PLAN_ID = "plan:free@0";
-export const TIER_STARTUP_PLAN_ID = "plan:startup@0";
-export const TIER_BUSINESS_PLAN_ID = "plan:business@0";
+export const TIER_STARTUP_PLAN_ID = "plan:allin@2";
 
 // Features
 export const TIER_BASE_FEATURE_ID = "feature:base";
@@ -21,10 +20,6 @@ export const tierPlanConstants: TierPlanConstant[] = [
     {
         planId: TIER_STARTUP_PLAN_ID as PlanName,
         promoted: true,
-    },
-    {
-        planId: TIER_BUSINESS_PLAN_ID as PlanName,
-        promoted: false,
     },
 ];
 

@@ -1,0 +1,22 @@
+{
+  "plans": {
+    "plan:free@0": {
+      "title": "Free",
+      "features": {
+        "feature:base": {
+          "base": 0,
+          "title": "base"
+        }
+      }
+    },
+    "plan:allin@2": {
+      "title": "All In",
+      "features": {
+        "feature:base": {
+          "base": 5000,
+          "title": "base"
+        }
+      }
+    }
+  }
+}
