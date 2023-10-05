@@ -12,6 +12,19 @@ export const metadata: Metadata = {
 
 export default async function PricingPage() {
   const pricing = await pullPricingTableData()
+  const features = [
+    "Lifetime access to the SaaS Starter Kits",
+    "Use any of the kits you want to use (Pro and Teams licenses only)",
+    "Build unlimited applications, with any starter kit",
+    "Continuous and frequent updates (packages, features, etc.)",
+    "Access to the Discord community",
+    "Community and Chat support",
+    "Feature requests",
+    "Access to new SaaS Starters and resources before anyone else",
+    "One-time payment, no subscriptions",
+    "Access to pre-built codebases (such as makerpal.io)",
+  ]
+
   return (
     <>
       {/* Hero Copy */}
@@ -90,6 +103,19 @@ export default async function PricingPage() {
             </div>
           ))}
         </div>
+      </div>
+      <div className="w-full max-w-[600px] mx-auto">
+        <ul className="my-6 flex flex-col gap-4">
+          {features.length &&
+            features.map((feature, index) => (
+              <li className="flex gap-2 items-center" key={index}>
+                <Icons.checkBox className="h-4 w-4 stroke-green-700" />
+                <Typography variant="sm" component="p">
+                  {feature}
+                </Typography>
+              </li>
+            ))}
+        </ul>
       </div>
     </>
   )

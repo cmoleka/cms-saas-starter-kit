@@ -1,7 +1,6 @@
 import Link from "next/link"
+import { CmsSKLogo } from "@/res/logos/CmsSKLogo"
 import { auth, currentUser, SignInButton, SignUpButton } from "@clerk/nextjs"
-
-import { siteConfig } from "@/config/site"
 
 import { Icons } from "./icons"
 import MaxWidthWrapper from "./max-width-wrapper"
@@ -11,8 +10,6 @@ import { Button } from "./ui/button"
 import { Typography } from "./ui/typography"
 import UserAccountNav from "./user-account-nav"
 
-// import UserAccountNav from "./user-account-nav"
-
 const Navbar = async () => {
   const user = await currentUser()
 
@@ -21,13 +18,7 @@ const Navbar = async () => {
       <MaxWidthWrapper>
         <div className="flex h-14 items-center justify-between">
           <Link href="/" className="flex z-40">
-            <Typography
-              variant="lead"
-              component="span"
-              className="font-bold uppercase"
-            >
-              <span>{siteConfig.name}</span>
-            </Typography>
+            <CmsSKLogo />
           </Link>
 
           <MobileNav isAuth={!!user?.id} />
