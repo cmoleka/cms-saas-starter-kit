@@ -18,6 +18,8 @@ const typographyVariants = cva(
         h4: "font-heading mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
         h5: "mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
         h6: "mt-8 scroll-m-20 text-base font-semibold tracking-tight",
+        large:
+          "text-xl mx-auto tracking-tight leading-tight [&:not(:first-child)]:mt-5",
         lead: "text-lg mx-auto tracking-tight leading-tight [&:not(:first-child)]:mt-5",
         body: "leading-7 [&:not(:first-child)]:mt-5",
         sm: "text-sm tracking-tight leading-tight",

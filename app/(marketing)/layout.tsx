@@ -1,3 +1,5 @@
+import { Footer } from "@/components/footer"
+
 interface AuthLayoutProps {
   children: React.ReactNode
 }
@@ -11,8 +13,11 @@ export default async function AppLayout({ children }: AuthLayoutProps) {
 
   //   const stargazers_count: number = data.stargazers_count;
   return (
-    <main className="mx-auto max-w-7xl px-12">
-      <div className="px-6 lg:px-8">{children}</div>
-    </main>
+    <>
+      <main className="mx-auto max-w-7xl px-12">
+        <div className="px-6 lg:px-8">{children}</div>
+      </main>
+      <Footer />
+    </>
   )
 }

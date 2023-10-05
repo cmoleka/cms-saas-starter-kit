@@ -1,70 +1,94 @@
 import { Metadata } from "next"
 import { clsx } from "clsx"
 
-// import { pullPricingTableData } from "@/lib/services/pricingTableData";
+import { pullPricingTableData } from "@/lib/services/pricingTableData"
+import { Button } from "@/components/ui/button"
+import { Typography } from "@/components/ui/typography"
+import { Icons } from "@/components/icons"
 
 export const metadata: Metadata = {
   title: "Pricing",
 }
 
 export default async function PricingPage() {
-  //   const pricing = await pullPricingTableData();
+  const pricing = await pullPricingTableData()
   return (
     <>
       {/* Hero Copy */}
       <div className="mt-16 flex flex-col items-center gap-4">
-        <h1 className="md:h1 h2 w-full px-4 text-center md:w-[805px] md:px-0">
+        <Typography
+          variant="display1"
+          component="h1"
+          className="w-full px-4 text-center md:w-[805px] md:px-0"
+        >
           Easy & flexible pricing
-        </h1>
-        <p className="body-xl w-full px-4 text-center text-slate-11 md:w-[572px] md:px-0">
+        </Typography>
+        <Typography
+          variant="large"
+          component="p"
+          className="w-full px-4 text-center font-semibold md:w-[572px] md:px-0"
+        >
           Whatever plan you choose, know that our AI will generate the best
           marketing copy.
-        </p>
+        </Typography>
       </div>
 
       {/* Pricing */}
       <div className="my-16 flex flex-col items-center">
         <div className="mx-auto flex flex-col items-start gap-6 md:flex-row">
-          {/* {pricing.map((plan, planIndex) => (
+          {pricing.map((plan, planIndex) => (
             <div
               key={planIndex}
               className={clsx(
-                "flex h-[353px] flex-col gap-8 rounded-lg bg-slate-2 px-6 py-12",
-                plan.promoted === true ? "border-[3px] border-crimson-6" : ""
+                "flex h-fit flex-col gap-8 rounded-lg bg-slate-2 px-6 py-12",
+                plan?.promoted === true ? "border-[3px] border-crimson-6" : ""
               )}
             >
               <div className="flex flex-col gap-2">
-                <h6 className="body-semibold text-slate-12">{plan.name}</h6>
+                <Typography
+                  variant="sm"
+                  component="span"
+                  className="uppercase font-bold"
+                >
+                  {plan?.name}
+                </Typography>
                 <div className="flex items-center gap-3">
-                  <h5 className="text-[32px] font-bold leading-9">${plan.base / 100}</h5>
+                  <Typography variant="h1" component="h5">
+                    ${(plan?.base as number) / 100}
+                  </Typography>
                   <div className="flex flex-col items-start">
-                    <span className="caption">{plan.currency.toUpperCase()}</span>
-                    <span className="caption-s text-slate-11">Billed {plan.interval}</span>
+                    <Typography
+                      variant="body"
+                      component="span"
+                      className="font-semibold"
+                    >
+                      {plan?.currency.toUpperCase()}
+                    </Typography>
+                    <Typography variant="sm" component="span">
+                      Billed {plan?.interval}
+                    </Typography>
                   </div>
                 </div>
               </div>
-              {plan.promoted ? (
-                <SignUpButton type="primary">Buy this plan</SignUpButton>
+              {plan?.promoted ? (
+                <Button>
+                  <Icons.upgrade className="h-4 w-4 mr-2" />
+                  Buy {plan?.name} license
+                </Button>
               ) : (
-                <SignUpButton type="outline">Buy this plan</SignUpButton>
+                <Button>Get {plan?.name} license</Button>
               )}
 
               <div className="flex flex-col gap-4">
-                {plan.features.map((feature, featureIndex) => (
+                {plan?.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center gap-3">
-                    <CheckBoxIcon
-                      className={clsx(
-                        "h-6 w-6 ",
-                        plan.promoted ? "stroke-crimson-9" : "stroke-slate-11"
-                      )}
-                    />
+                    <Icons.checkBox className="h-4 w-4 stroke-green-700" />
                     <p className="body text-slate-11">{feature}</p>
                   </div>
                 ))}
               </div>
             </div>
-          ))} */}
-          <h2>Coming soon</h2>
+          ))}
         </div>
       </div>
     </>
