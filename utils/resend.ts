@@ -8,17 +8,18 @@ import BannedTemplate from '@/components/emails/banned-template';
 import ProfileDeletedTemplate from '@/components/emails/profile-deleted-template';
 
 const ResendSendEmail = async (data: ResendEmail) => {
-    return await resend.emails.send({
+    const email = await resend.emails.send({
         from: 'Acme <onboarding@resend.dev>',
         ...data
     })
+    return email
 }
 
 // Send a welcome email to the user
 export const ResendSendWelcomeEmail = async (email: string, firstName: string, userImage: string) => {
     try {
         await ResendSendEmail({
-            to: [email],
+            to: ['carlo@itraws.com'],
             subject: `Welcome to ${siteConfig.name}`,
             react: WelcomeTemplate({ firstName: firstName, userImage: userImage }) as React.ReactElement,
         })
@@ -31,7 +32,7 @@ export const ResendSendWelcomeEmail = async (email: string, firstName: string, u
 export const ResendSendProfileUpdateEmail = async (email: string, firstName: string, userImage: string) => {
     try {
         await ResendSendEmail({
-            to: [email],
+            to: ['carlo@itraws.com'],
             subject: `Your ${siteConfig.name} profile has been updated`,
             react: ProfileUpdateTemplate({ firstName: firstName, userImage: userImage }) as React.ReactElement,
         })
@@ -44,7 +45,7 @@ export const ResendSendProfileUpdateEmail = async (email: string, firstName: str
 export const ResendSendBannedEmail = async (email: string, firstName: string) => {
     try {
         await ResendSendEmail({
-            to: [email],
+            to: ['carlo@itraws.com'],
             subject: `Your ${siteConfig.name} account has been banned`,
             react: BannedTemplate({ firstName: firstName }) as React.ReactElement,
         })
@@ -57,7 +58,7 @@ export const ResendSendBannedEmail = async (email: string, firstName: string) =>
 export const ResendSendDeletedEmail = async (email: string, firstName: string) => {
     try {
         await ResendSendEmail({
-            to: [email],
+            to: ['carlo@itraws.com'],
             subject: `Your ${siteConfig.name} account has been banned`,
             react: ProfileDeletedTemplate({ firstName: firstName }) as React.ReactElement,
         })

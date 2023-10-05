@@ -1,6 +1,6 @@
 import { prisma } from "@/lib";
 import { headers } from "next/headers"
-import { webhook } from '@/lib'
+import { clearkWebhook } from '@/lib'
 import type { WebhookEvent } from '@clerk/nextjs/server'
 import { ResendSendBannedEmail, ResendSendDeletedEmail, ResendSendProfileUpdateEmail, ResendSendWelcomeEmail, TierLookup } from "@/utils";
 import { ClerkGetFirstEmail } from "@/utils";
@@ -31,7 +31,7 @@ const handler = async (req: Request) => {
 
     // Verify the payload with the headers
     try {
-        evt = webhook.verify(body, {
+        evt = clearkWebhook.verify(body, {
             "svix-id": svix_id,
             "svix-timestamp": svix_timestamp,
             "svix-signature": svix_signature,
@@ -52,56 +52,72 @@ const handler = async (req: Request) => {
         const userEmail = ClerkGetFirstEmail(evt.data)
 
         // Updates the user on our end
-        await prisma.user.upsert({
-            where: { emailAddress: userEmail, isBanned: false },
-            create: {
-                externalId: id,
-                firstName: attributes.first_name,
-                lastName: attributes.last_name,
-                gender: attributes.gender,
-                birthday: attributes.birthday,
-                image: attributes.image_url,
-                twitterId: attributes.username ? attributes.username : '',
-                emailAddress: userEmail,
-            },
-            update: {
-                externalId: id,
-                firstName: attributes.first_name,
-                lastName: attributes.last_name,
-                gender: attributes.gender,
-                birthday: attributes.birthday,
-                image: attributes.image_url,
-                twitterId: attributes.username ? attributes.username : '',
-                emailAddress: userEmail,
-                isClerkDeleted: false,
-            },
-        });
+        try {
+            await prisma.user.upsert({
+                where: { emailAddress: userEmail, isBanned: false },
+                create: {
+                    externalId: id,
+                    firstName: attributes.first_name,
+                    lastName: attributes.last_name,
+                    gender: attributes.gender,
+                    birthday: attributes.birthday,
+                    image: attributes.image_url,
+                    twitterId: attributes.username ? attributes.username : '',
+                    emailAddress: userEmail,
+                },
+                update: {
+                    externalId: id,
+                    firstName: attributes.first_name,
+                    lastName: attributes.last_name,
+                    gender: attributes.gender,
+                    birthday: attributes.birthday,
+                    image: attributes.image_url,
+                    twitterId: attributes.username ? attributes.username : '',
+                    emailAddress: userEmail,
+                    isClerkDeleted: false,
+                },
+            });
+        } catch (error) {
+            console.log(error)
+        }
         switch (eventType) {
             case "user.created": {
-                // Send the user a welcome email
-                await ResendSendWelcomeEmail(userEmail, attributes.first_name, attributes.image_url)
-                // Subscribe the user to the free plan
-                TierLookup(evt.data)
-                break
+                try {
+                    // Send the user a welcome email
+                    await ResendSendWelcomeEmail(userEmail, attributes.first_name, attributes.image_url)
+                    // Subscribe the user to the free plan
+                    TierLookup(evt.data)
+                    return new Response('', { status: 201 })
+                } catch (error) {
+                    console.log(error)
+                }
             }
             case "user.updated": {
-                // Send the user a profile update email
-                await ResendSendProfileUpdateEmail(userEmail, attributes.first_name, attributes.image_url)
-                break
+                try {
+                    // Send the user a profile update email
+                    await ResendSendProfileUpdateEmail(userEmail, attributes.first_name, attributes.image_url)
+                    return new Response('', { status: 201 })
+                } catch (error) {
+                    console.log(error)
+                }
             }
         }
     }
     if (eventType === "user.deleted") {
         // Updates the user to deleted on our end
-        const { id } = evt.data;
-        const user = await prisma.user.update({
-            where: { externalId: id },
-            data: {
-                isClerkDeleted: true,
-            }
-        });
-        // Send the user a deleted email
-        await ResendSendDeletedEmail(user.emailAddress, user.firstName as string)
+        try {
+            const { id } = evt.data;
+            const user = await prisma.user.update({
+                where: { externalId: id },
+                data: {
+                    isClerkDeleted: true,
+                }
+            });
+            // Send the user a deleted email
+            await ResendSendDeletedEmail(user.emailAddress, user.firstName as string)
+        } catch (error) {
+            console.log(error)
+        }
     }
     return new Response('', { status: 201 })
 }

@@ -13,7 +13,7 @@ export const env = createEnv({
     TIER_BASE_URL: z.string().min(1),
     TIER_API_KEY: z.string().min(1),
     RESEND_API_KEY: z.string().min(1),
-    SVIX_WEBHOOK_SECRET: z.string().min(1),
+    CLERK_WEBHOOK_SECRET: z.string().min(1),
     RESEND_WEBHOOK_SECRET: z.string().min(1),
   },
   client: {
@@ -41,7 +41,7 @@ export const env = createEnv({
     TWITTER_CLIENT_SECRET: process.env.TWITTER_CLIENT_SECRET,
     TIER_BASE_URL: process.env.TIER_BASE_URL,
     TIER_API_KEY: process.env.TIER_API_KEY,
-    SVIX_WEBHOOK_SECRET: process.env.SVIX_WEBHOOK_SECRET,
+    CLERK_WEBHOOK_SECRET: process.env.CLERK_WEBHOOK_SECRET,
     RESEND_WEBHOOK_SECRET: process.env.RESEND_WEBHOOK_SECRET,
     RESEND_API_KEY: process.env.RESEND_API_KEY,
   },

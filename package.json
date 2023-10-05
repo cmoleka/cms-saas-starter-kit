@@ -57,6 +57,7 @@
     "cmdk": "^0.2.0",
     "encoding": "^0.1.13",
     "lucide-react": "^0.279.0",
+    "micro": "^10.0.1",
     "next": "latest",
     "next-themes": "^0.2.1",
     "react": "latest",

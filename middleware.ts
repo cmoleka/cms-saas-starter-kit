@@ -12,6 +12,7 @@ export default authMiddleware({
     ],
     ignoredRoutes: [
         '/api/webhooks/user',
+        '/api/webhooks/emails',
     ]
 });
 
