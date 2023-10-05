@@ -27,9 +27,7 @@ const handler = async (req: Request) => {
 
     // Get the body
     const payload = await req.json() as ResendWebhookEvent
-    console.log("payload from req: ", payload)
     const body = JSON.stringify(payload);
-    console.log("Body stringify: ", body)
 
     let evt: ResendWebhookEvent
 

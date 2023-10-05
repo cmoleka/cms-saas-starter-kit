@@ -10,10 +10,13 @@ import { Button } from "./ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
+  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu"
+import { Typography } from "./ui/typography"
 
 interface UserAccountNavProps {
   name: string
@@ -47,36 +50,34 @@ const UserAccountNav = async ({ imageUrl, name }: UserAccountNavProps) => {
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="bg-white" align="end">
-        <div className="flex items-center justify-start gap-2 p-2">
-          <div className="flex flex-col space-y-0.5 leading-none">
-            {name && <p className="font-medium text-sm text-black">{name}</p>}
-          </div>
-        </div>
+      <DropdownMenuContent className="w-fit" align="end">
+        <DropdownMenuLabel>{name}</DropdownMenuLabel>
 
         <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem>
+            <Icons.user className="h-4 w-4 mr-2" />
+            <Link href="/dashboard">Dashboard</Link>
+          </DropdownMenuItem>
 
-        <DropdownMenuItem asChild>
-          <Link href="/dashboard">Dashboard</Link>
-        </DropdownMenuItem>
-
-        <DropdownMenuItem asChild>
-          {/* {subscriptionPlan?.isSubscribed ? (
-            <Link href='/dashboard/billing'>
+          <DropdownMenuItem>
+            {/* {subscriptionPlan?.isSubscribed ? (
+              <Link href='/dashboard/billing'>
               Manage Subscription
-            </Link>
-          ) : ( */}
-          <Link href="/pricing">
-            Upgrade <Gem className="text-blue-600 h-4 w-4 ml-1.5" />
-          </Link>
-          {/* )} */}
-        </DropdownMenuItem>
-
+              </Link>
+            ) : ( */}
+            <Icons.upgrade className="h-4 w-4 mr-2" />
+            <Link href="/pricing">Upgrade</Link>
+            {/* )} */}
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
         <DropdownMenuSeparator />
-
-        <DropdownMenuItem className="cursor-pointer">
+        <DropdownMenuItem>
           <SignOutButton>
-            <Button size="default">Sign Out</Button>
+            <Button className="w-full">
+              <Icons.logout className="h-4 w-4 mr-2" />
+              Sign Out
+            </Button>
           </SignOutButton>
         </DropdownMenuItem>
       </DropdownMenuContent>

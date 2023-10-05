@@ -3,7 +3,10 @@ import {
   BrushIcon,
   CheckSquareIcon,
   ChevronRightIcon,
+  Gem,
   InboxIcon,
+  LogIn,
+  LogOut,
   LucideProps,
   Moon,
   SquareStackIcon,
@@ -27,6 +30,9 @@ export const Icons = {
   moon: Moon,
   checkBox: CheckSquareIcon,
   twitter: Twitter,
+  upgrade: Gem,
+  login: LogIn,
+  logout: LogOut,
   logo: (props: LucideProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
       <path
