@@ -2,6 +2,7 @@ import "@/styles/globals.css"
 
 import type { Metadata } from "next"
 import { ClerkProvider } from "@clerk/nextjs"
+import { Analytics } from "@vercel/analytics/react"
 
 import { siteConfig } from "@/config/site"
 import { inter } from "@/lib/fonts"
@@ -74,6 +75,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             >
               <Navbar />
               {children}
+              <Analytics />
               <Toaster />
             </ThemeProvider>
           </body>

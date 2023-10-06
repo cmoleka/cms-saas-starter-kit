@@ -28,8 +28,12 @@ export function CheckoutButton({
           variant: "destructive",
         })
       }
+      toast({
+        title: "Plan upgrade initiated.",
+        description: "Please wait while we redirect you to the payment page.",
+        variant: "default",
+      })
       const session = await response.json()
-      console.log(session)
       if (session) {
         window.location.href = session.url
       }
