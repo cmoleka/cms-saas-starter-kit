@@ -43,7 +43,7 @@ const Navbar = async () => {
             ) : (
               <>
                 <Button variant="ghost" asChild>
-                  <Link href="/dashboard">Dashboard</Link>
+                  <Link href={`/dashboard/${user.id}`}>Dashboard</Link>
                 </Button>
 
                 <UserAccountNav
@@ -53,6 +53,7 @@ const Navbar = async () => {
                       : `${user.firstName} ${user.lastName}`
                   }
                   imageUrl={user.imageUrl ?? ""}
+                  userId={user.id}
                 />
               </>
             )}

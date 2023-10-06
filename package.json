@@ -68,6 +68,7 @@
     "react-wrap-balancer": "^1.1.0",
     "recharts": "^2.8.0",
     "resend": "^1.1.0",
+    "stripe": "^13.9.0",
     "superjson": "^1.13.3",
     "svix": "^1.12.0",
     "tailwind-merge": "^1.14.0",

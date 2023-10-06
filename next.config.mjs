@@ -5,6 +5,15 @@ const nextConfig = {
 images: {
     domains: ["img.clerk.com", "images.unsplash.com"],
   },
+  redirects: async () => {
+    return [
+      {
+        source: "/dashboard/:userId/settings",
+        destination: "/dashboard/:userId/settings/profile",
+        permanent: true,
+      },
+    ]
+  }
 }
 
 

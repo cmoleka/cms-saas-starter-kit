@@ -9,7 +9,7 @@ import { tier } from "@/lib";
 
 export const pullPricingTableData = async () => {
     // Pull the all the pricing model details from Tier Cloud
-    const tierPricingData: TierPricingData = await tier.pull();
+    const tierPricingData = await tier.pull();
 
     const pricingTableData = tierPlanConstants
         .map((currentPlan) => {
@@ -63,9 +63,8 @@ export const pullPricingTableData = async () => {
             }
         })
         .filter((_plan) => {
-            if (_plan) {
-                return _plan;
-            }
+            if (!_plan) return
+            return _plan;
         });
 
     return pricingTableData;

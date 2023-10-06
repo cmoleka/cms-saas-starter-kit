@@ -1,15 +1,11 @@
-import Link from "next/link"
-import { clsx } from "clsx"
-
 import { pullPricingTableData } from "@/lib/services/pricingTableData"
 import { Badge } from "@/components/ui/badge"
+import { Typography } from "@/components/ui/typography"
+import { Icons } from "@/components/icons"
+import PricingPlans from "@/components/marketing/pricingPlans"
 
-import { Icons, type Icon, type IconProps } from "../icons"
-import { Button } from "../ui/button"
-import { Typography } from "../ui/typography"
-
-export default async function Pricings() {
-  const pricing = await pullPricingTableData()
+export default async function Pricing() {
+  const pricings = await pullPricingTableData()
 
   const features = [
     "Lifetime access to the SaaS Starter Kits",
@@ -51,54 +47,7 @@ export default async function Pricings() {
               </Typography>
             </div>
             <div className="w-full max-w-[600px] space-y-4 mx-auto">
-              <div className="my-16 flex flex-col items-center">
-                <div className="mx-auto flex flex-col items-center gap-6 md:flex-row">
-                  {pricing.map((plan, planIndex) => (
-                    <div
-                      key={planIndex}
-                      className={clsx(
-                        "flex h-fit flex-col gap-8 rounded-lg dark:bg-slate-900 bg-slate-200 px-6 py-12",
-                        plan?.promoted === true
-                          ? "border-[3px] border-slate-500"
-                          : ""
-                      )}
-                    >
-                      <div className="flex flex-col gap-2">
-                        <Typography
-                          variant="sm"
-                          component="span"
-                          className="uppercase font-bold"
-                        >
-                          {plan?.name}
-                        </Typography>
-                        <Typography variant="h1" component="h5">
-                          ${(plan?.base as number) / 100}
-                        </Typography>
-                      </div>
-                      {plan?.promoted ? (
-                        <Button>
-                          <Icons.upgrade className="h-4 w-4 mr-2" />
-                          Buy {plan?.name} license
-                        </Button>
-                      ) : (
-                        <Button>Get {plan?.name} license</Button>
-                      )}
-
-                      <div className="flex flex-col gap-4">
-                        {plan?.features.map((feature, featureIndex) => (
-                          <div
-                            key={featureIndex}
-                            className="flex items-center gap-3"
-                          >
-                            <Icons.checkBox className="h-6 w-6" />
-                            <p className="body text-slate-11">{feature}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <PricingPlans pricings={pricings} />
               <div className="w-full max-w-[600px] mx-auto">
                 <ul className="my-6 flex flex-col gap-4">
                   {features.length &&
@@ -111,6 +60,7 @@ export default async function Pricings() {
                       </li>
                     ))}
                 </ul>
+                P
               </div>
             </div>
           </div>

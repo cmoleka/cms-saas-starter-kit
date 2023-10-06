@@ -19,9 +19,14 @@ import {
 interface UserAccountNavProps {
   name: string
   imageUrl: string
+  userId: string
 }
 
-const UserAccountNav = async ({ imageUrl, name }: UserAccountNavProps) => {
+const UserAccountNav = async ({
+  imageUrl,
+  name,
+  userId,
+}: UserAccountNavProps) => {
   //   const subscriptionPlan = await getUserSubscriptionPlan()
 
   return (
@@ -55,11 +60,11 @@ const UserAccountNav = async ({ imageUrl, name }: UserAccountNavProps) => {
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <Icons.dashboard className="h-4 w-4 mr-2" />
-            <Link href="/dashboard">Dashboard</Link>
+            <Link href={`/dashboard/${userId}`}>Dashboard</Link>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Icons.user className="h-4 w-4 mr-2" />
-            <Link href="/user-profile">Profile</Link>
+            <Link href={`/dashboard/${userId}/settings/profile`}>Profile</Link>
           </DropdownMenuItem>
 
           <DropdownMenuItem>
@@ -69,7 +74,9 @@ const UserAccountNav = async ({ imageUrl, name }: UserAccountNavProps) => {
               </Link>
             ) : ( */}
             <Icons.upgrade className="h-4 w-4 mr-2" />
-            <Link href="/pricing">Upgrade</Link>
+            <Link href={`/dashboard/${userId}/settings/subscription`}>
+              Upgrade
+            </Link>
             {/* )} */}
           </DropdownMenuItem>
         </DropdownMenuGroup>

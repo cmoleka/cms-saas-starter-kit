@@ -1,3 +1,5 @@
+import { currentUser } from "@clerk/nextjs"
+
 import {
   Card,
   CardContent,
@@ -14,7 +16,15 @@ export const metadata = {
   title: "Dashboard",
 }
 
-export default function DashboardPage() {
+interface DashboardPageProps {
+  userId: string
+}
+
+export default async function DashboardUserPage({
+  userId,
+}: DashboardPageProps) {
+  const user = await currentUser()
+
   return (
     <main className="w-full p-3 flex flex-col flex-1">
       <div className="flex flex-col space-y-6 pb-36">

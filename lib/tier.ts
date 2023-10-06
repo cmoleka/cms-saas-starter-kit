@@ -1,4 +1,7 @@
-import { Tier } from 'tier/client'
+// import { Tier } from 'tier' // if you do not want to make Tier work on edge
+
+import { Tier } from 'tier/client' // if you want to make Tier work on edge
+
 import { env } from '@/env.mjs'
 
 export const tier = new Tier({

@@ -59,7 +59,7 @@ export const ResendSendDeletedEmail = async (email: string, firstName: string) =
     try {
         await ResendSendEmail({
             to: ['carlo@itraws.com'],
-            subject: `Your ${siteConfig.name} account has been banned`,
+            subject: `Your ${siteConfig.name} account has been deleted`,
             react: ProfileDeletedTemplate({ firstName: firstName }) as React.ReactElement,
         })
     } catch (error) {

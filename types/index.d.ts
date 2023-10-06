@@ -52,7 +52,7 @@ export type PricingTableData = {
     name: string;
     base: number;
     features: string[];
-};
+} | undefined;
 
 export type CurrentPlan = {
     planId: PlanName;

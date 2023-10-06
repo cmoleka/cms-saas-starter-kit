@@ -9,7 +9,10 @@ export const pullCurrentPlan = async (
 ): Promise<CurrentPlan> => {
     const currentPlanId = currentPhase.plans ? currentPhase.plans[0] : TIER_FREE_PLAN_ID;
 
-    const pricingTablePlan = pricingTableData.find((_plan) => _plan.planId === currentPlanId);
+    const pricingTablePlan = pricingTableData.find((_plan) => {
+        if (!_plan) return false
+        _plan.planId === currentPlanId
+    });
 
     return {
         planId: currentPlanId,
