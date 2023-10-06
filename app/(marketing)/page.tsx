@@ -1,12 +1,19 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { constructMetadata } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Typography } from "@/components/ui/typography"
 import { Icons } from "@/components/icons"
 import Features from "@/components/marketing/features"
 import Pricings from "@/components/marketing/pricing"
+
+export const metadata = constructMetadata({
+  title: "NextJs SaaS Starter Kit",
+  description:
+    "A Next.js starter kit for building SaaS applications by Carlo Moleka Sambea.",
+})
 
 export default async function IndexPage() {
   return (

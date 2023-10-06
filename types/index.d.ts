@@ -16,6 +16,7 @@ export type SiteConfig = {
         url: string;
     }[];
     creator?: string;
+    creatorTwitter?: string;
 };
 
 export type TierPlanConstant = {

@@ -1,5 +1,6 @@
 import { currentUser } from "@clerk/nextjs"
 
+import { constructMetadata } from "@/lib/utils"
 import {
   Card,
   CardContent,
@@ -12,9 +13,10 @@ import { Overview } from "@/components/dashboard/overview"
 import { RecentSales } from "@/components/dashboard/recent-sales"
 import WelcomeMessage from "@/components/dashboard/welcome-message"
 
-export const metadata = {
+export const metadata = constructMetadata({
   title: "Dashboard",
-}
+  description: "User dashboard for the SaaS Starter Kit.",
+})
 
 interface DashboardPageProps {
   userId: string

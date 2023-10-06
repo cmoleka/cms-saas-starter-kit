@@ -1,5 +1,12 @@
 import { UserProfile } from "@clerk/nextjs"
 
+import { constructMetadata } from "@/lib/utils"
+
+export const metadata = constructMetadata({
+  title: "User Profile",
+  description: "User profile for the SaaS Starter Kit.",
+})
+
 const UserProfilePage = () => {
   return (
     <UserProfile

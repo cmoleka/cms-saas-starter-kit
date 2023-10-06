@@ -1,6 +1,7 @@
 // import { getUserSubscriptionPlan } from '@/lib/stripe'
 import Image from "next/image"
 import Link from "next/link"
+import { TierIsSubscribed } from "@/utils/tier"
 import { SignOutButton } from "@clerk/nextjs"
 
 import { Icons } from "./icons"
@@ -27,7 +28,7 @@ const UserAccountNav = async ({
   name,
   userId,
 }: UserAccountNavProps) => {
-  //   const subscriptionPlan = await getUserSubscriptionPlan()
+  const subscriptionPlan = await TierIsSubscribed(userId)
 
   return (
     <DropdownMenu>
@@ -53,31 +54,36 @@ const UserAccountNav = async ({
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="w-fit" align="end">
+      <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel>{name}</DropdownMenuLabel>
 
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Icons.dashboard className="h-4 w-4 mr-2" />
-            <Link href={`/dashboard/${userId}`}>Dashboard</Link>
+          <DropdownMenuItem asChild>
+            <Link href={`/dashboard/${userId}`}>
+              <Icons.dashboard className="h-4 w-4 mr-2" />
+              Dashboard
+            </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Icons.user className="h-4 w-4 mr-2" />
-            <Link href={`/dashboard/${userId}/settings/profile`}>Profile</Link>
+          <DropdownMenuItem asChild>
+            <Link href={`/dashboard/${userId}/settings/profile`}>
+              <Icons.user className="h-4 w-4 mr-2" />
+              Profile
+            </Link>
           </DropdownMenuItem>
 
-          <DropdownMenuItem>
-            {/* {subscriptionPlan?.isSubscribed ? (
-              <Link href='/dashboard/billing'>
-              Manage Subscription
+          <DropdownMenuItem asChild>
+            {subscriptionPlan ? (
+              <Link href={`/dashboard/${userId}/settings/subscription`}>
+                <Icons.upgrade className="h-4 w-4 mr-2" />
+                Manage Subscription
               </Link>
-            ) : ( */}
-            <Icons.upgrade className="h-4 w-4 mr-2" />
-            <Link href={`/dashboard/${userId}/settings/subscription`}>
-              Upgrade
-            </Link>
-            {/* )} */}
+            ) : (
+              <Link href={`/dashboard/${userId}/settings/subscription`}>
+                <Icons.upgrade className="h-4 w-4 mr-2" />
+                Upgrade
+              </Link>
+            )}
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />

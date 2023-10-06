@@ -2,13 +2,15 @@ import { Metadata } from "next"
 import { clsx } from "clsx"
 
 import { pullPricingTableData } from "@/lib/services/pricingTableData"
+import { constructMetadata } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Typography } from "@/components/ui/typography"
 import { Icons } from "@/components/icons"
 
-export const metadata: Metadata = {
+export const metadata = constructMetadata({
   title: "Pricing",
-}
+  description: "Pricing for the SaaS Starter Kits",
+})
 
 export default async function PricingPage() {
   const pricing = await pullPricingTableData()

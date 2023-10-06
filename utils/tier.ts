@@ -21,3 +21,12 @@ export const TierLookup = async (session: UserJSON) => {
         });
     }
 }
+
+// Check if user/org is subscribed to any plan
+export const TierIsSubscribed = async (userId: string) => {
+    const isSubscribed = await tier.lookupOrg(`org:${userId}`);
+    if (!isSubscribed) {
+        return false
+    }
+    return true
+}

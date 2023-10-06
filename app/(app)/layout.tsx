@@ -1,11 +1,14 @@
 import { permanentRedirect } from "next/navigation"
 import { currentUser } from "@clerk/nextjs"
 
+import { constructMetadata } from "@/lib/utils"
 import NavBar from "@/components/dashboard/dashboard-nav-bar"
 
 interface LayoutProps {
   children: React.ReactNode
 }
+
+export const metadata = constructMetadata()
 
 export default async function AppLayout({ children }: LayoutProps) {
   const user = await currentUser()

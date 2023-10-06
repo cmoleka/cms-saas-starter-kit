@@ -19,4 +19,5 @@ export const siteConfig: SiteConfig = {
         },
     ],
     creator: "Carlo Moleka Sambea",
+    creatorTwitter: "@cmsistech"
 };
