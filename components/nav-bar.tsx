@@ -1,9 +1,8 @@
 import Link from "next/link"
 import { CmsSKLogo } from "@/res/logos/CmsSKLogo"
-import { auth, currentUser, SignInButton, SignUpButton } from "@clerk/nextjs"
+import { currentUser, SignInButton, SignUpButton } from "@clerk/nextjs"
 
 import { Icons } from "./icons"
-import MaxWidthWrapper from "./max-width-wrapper"
 import MobileNav from "./mobile-nav"
 import { ThemeToggle } from "./theme-toggle"
 import { Button } from "./ui/button"
@@ -14,14 +13,14 @@ const Navbar = async () => {
   const user = await currentUser()
 
   return (
-    <nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 dark:border-slate-500 bg-white/75 dark:bg-slate-900 backdrop-blur-lg transition-all">
-      <MaxWidthWrapper>
+    <nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-slate-100 dark:border-slate-700 bg-white/75 dark:bg-slate-900 backdrop-blur-lg transition-all">
+      <div className="px-5">
         <div className="flex h-14 items-center justify-between">
           <Link href="/" className="flex z-40">
             <CmsSKLogo />
           </Link>
 
-          <MobileNav isAuth={!!user?.id} />
+          <MobileNav isAuth={!!user} />
 
           <div className="hidden items-center space-x-4 sm:flex">
             <Link href="/pricing">
@@ -29,7 +28,7 @@ const Navbar = async () => {
                 Pricing
               </Typography>
             </Link>
-            {!user ? (
+            {!user?.id ? (
               <>
                 <SignInButton>
                   <Button size="default">Sign in</Button>
@@ -60,7 +59,7 @@ const Navbar = async () => {
             <ThemeToggle />
           </div>
         </div>
-      </MaxWidthWrapper>
+      </div>
     </nav>
   )
 }

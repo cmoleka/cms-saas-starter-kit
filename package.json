@@ -66,6 +66,7 @@
     "react-email": "^1.9.5",
     "react-hook-form": "^7.46.2",
     "react-wrap-balancer": "^1.1.0",
+    "recharts": "^2.8.0",
     "resend": "^1.1.0",
     "superjson": "^1.13.3",
     "svix": "^1.12.0",

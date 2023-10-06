@@ -2,7 +2,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import { SignOutButton } from "@clerk/nextjs"
-import { Gem } from "lucide-react"
 
 import { Icons } from "./icons"
 import { Avatar, AvatarFallback } from "./ui/avatar"
@@ -16,7 +15,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu"
-import { Typography } from "./ui/typography"
 
 interface UserAccountNavProps {
   name: string
@@ -56,8 +54,12 @@ const UserAccountNav = async ({ imageUrl, name }: UserAccountNavProps) => {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <Icons.user className="h-4 w-4 mr-2" />
+            <Icons.dashboard className="h-4 w-4 mr-2" />
             <Link href="/dashboard">Dashboard</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Icons.user className="h-4 w-4 mr-2" />
+            <Link href="/user-profile">Profile</Link>
           </DropdownMenuItem>
 
           <DropdownMenuItem>

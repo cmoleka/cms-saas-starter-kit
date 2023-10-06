@@ -6,10 +6,12 @@ import {
   Gem,
   InboxIcon,
   Laptop,
+  LayoutDashboard,
   LogIn,
   LogOut,
   LucideProps,
   Moon,
+  Settings,
   SquareStackIcon,
   SunMedium,
   Twitter,
@@ -23,6 +25,7 @@ export type IconProps = LucideProps
 export const Icons = {
   inbox: InboxIcon,
   chevronRight: ChevronRightIcon,
+  dashboard: LayoutDashboard,
   user: User,
   theme: BrushIcon,
   analytics: ActivitySquareIcon,
@@ -33,6 +36,7 @@ export const Icons = {
   checkBox: CheckSquareIcon,
   twitter: Twitter,
   upgrade: Gem,
+  settings: Settings,
   login: LogIn,
   logout: LogOut,
   logo: (props: LucideProps) => (

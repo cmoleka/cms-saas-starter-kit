@@ -72,9 +72,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
               enableSystem
               disableTransitionOnChange
             >
-              <Toaster />
               <Navbar />
               {children}
+              <Toaster />
             </ThemeProvider>
           </body>
         </Providers>
