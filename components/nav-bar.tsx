@@ -7,6 +7,7 @@ import MobileNav from "./mobile-nav"
 import { ThemeToggle } from "./theme-toggle"
 import { Button } from "./ui/button"
 import { Typography } from "./ui/typography"
+import UserAccountMobileNav from "./user-account-mobile-nav"
 import UserAccountNav from "./user-account-nav"
 
 const Navbar = async () => {
@@ -20,7 +21,7 @@ const Navbar = async () => {
             <CmsSKLogo />
           </Link>
 
-          <MobileNav isAuth={!!user} />
+          {!user ? <MobileNav /> : <UserAccountMobileNav user={user} />}
 
           <div className="hidden items-center space-x-4 sm:flex">
             <Link href="/pricing">
@@ -48,9 +49,9 @@ const Navbar = async () => {
 
                 <UserAccountNav
                   name={
-                    !user.firstName || !user.lastName
+                    !user.firstName
                       ? "Your Account"
-                      : `${user.firstName} ${user.lastName}`
+                      : `${user.firstName} ${user.lastName || ""}`
                   }
                   imageUrl={user.imageUrl ?? ""}
                   userId={user.id}
