@@ -10,7 +10,8 @@
     "dev": "next dev",
     "build": "prisma db push && next build",
     "start": "next start",
-    "lint": "next lint --fix",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "postinstall": "prisma generate"
   },
   "dependencies": {
@@ -77,16 +78,21 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@commitlint/cz-commitlint": "^17.7.2",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-tailwindcss": "^3.13.0",
+    "husky": "^8.0.3",
     "postcss": "latest",
     "prettier": "^3.0.3",
     "prisma": "^5.3.1",
