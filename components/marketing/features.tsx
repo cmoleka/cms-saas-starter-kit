@@ -189,7 +189,7 @@ const KeyFeature: React.FC<KeyFeaturesType> = ({
           </div>
         )}
         {leftContent && leftContent.ctaLabel && (
-          <Button variant="outline" asChild>
+          <Button asChild>
             <Link href="/dashboard">
               {leftContent.ctaLabel}
               <Icons.chevronRight className="ml-2 h-4 w-4" />

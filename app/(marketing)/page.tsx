@@ -52,17 +52,11 @@ export default async function IndexPage() {
           the point.
         </Typography>
         <div className="flex flex-col items-center gap-2 md:flex-row md:gap-4">
-          <Button size="lg" variant="default">
+          <Button size="lg" variant="default" asChild>
             <Link href="/signup">
-              <Typography
-                variant="body"
-                component="span"
-                className="text-slate-100 dark:text-slate-900 font-semibold"
-              >
-                Get Started
-              </Typography>
+              Get Started
+              <Icons.chevronRight className="ml-2 h-4 w-4 " />
             </Link>
-            <Icons.chevronRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
         <Typography variant="xs" component="p">

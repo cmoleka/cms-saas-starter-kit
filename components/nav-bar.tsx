@@ -30,12 +30,12 @@ const Navbar = async () => {
                     Pricing
                   </Typography>
                 </Link>
-                <SignInButton>
-                  <Button>Sign in</Button>
-                </SignInButton>
-                <SignUpButton>
-                  <Button variant="secondary">Sign up</Button>
-                </SignUpButton>
+                <Button asChild>
+                  <SignInButton>Sign in</SignInButton>
+                </Button>
+                <Button variant="secondary" asChild>
+                  <SignUpButton>Sign up</SignUpButton>
+                </Button>
               </>
             ) : (
               <>
