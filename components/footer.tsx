@@ -2,6 +2,7 @@ import { ClerkLogo } from "@/res/logos/ClerkLogo"
 import { NextJSLogo } from "@/res/logos/NextJSLogo"
 import { PrismaLogo } from "@/res/logos/PrismaLogo"
 import { ResendLogo } from "@/res/logos/ResendLogo"
+import { ShadcnUILogo } from "@/res/logos/ShadcnUILogo"
 import { StripeLogo } from "@/res/logos/StripeLogo"
 import { TierLogo } from "@/res/logos/TierLogo"
 import { TrpcLogo } from "@/res/logos/TrpcLogo"
@@ -18,6 +19,7 @@ export function Footer() {
       {/* Logos */}
       <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         <NextJSLogo />
+        <ShadcnUILogo className="text-[#9BA2A7] font-bold" />
         <PrismaLogo />
         <TrpcLogo />
         <ClerkLogo />

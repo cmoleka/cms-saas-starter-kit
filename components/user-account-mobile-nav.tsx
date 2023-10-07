@@ -28,7 +28,7 @@ export default function UserAccountMobileNav({
 }: UserAccountMobileNavProps) {
   return (
     <Sheet>
-      <SheetTrigger asChild>
+      <SheetTrigger className="sm:hidden" asChild>
         <Button className="rounded-full h-8 w-8 aspect-square bg-slate-400">
           <Avatar className="relative w-8 h-8">
             {user.imageUrl ? (

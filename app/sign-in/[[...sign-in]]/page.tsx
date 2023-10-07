@@ -1,5 +1,16 @@
 import { SignIn } from "@clerk/nextjs"
 
-export default function Page() {
-  return <SignIn />
+import { constructMetadata } from "@/lib/utils"
+
+export const metadata = constructMetadata({
+  title: "Sign In",
+  description: "Sign in to your account.",
+})
+
+export default function SignInPage() {
+  return (
+    <div className="mt-16 flex flex-col justify-center items-center gap-4">
+      <SignIn />
+    </div>
+  )
 }

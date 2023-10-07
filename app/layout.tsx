@@ -8,6 +8,7 @@ import { cn, constructMetadata } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import Navbar from "@/components/nav-bar"
 import Providers from "@/components/Providers"
+import { SiteFooter } from "@/components/site-footer"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata = constructMetadata()
@@ -34,8 +35,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
               enableSystem
               disableTransitionOnChange
             >
-              <Navbar />
-              {children}
+              <div className="relative flex min-h-screen flex-col">
+                <Navbar />
+                <div className="flex-1">{children}</div>
+                <SiteFooter />
+              </div>
               <Analytics />
               <Toaster />
             </ThemeProvider>

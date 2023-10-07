@@ -24,13 +24,13 @@ const Navbar = async () => {
           {!user ? <MobileNav /> : <UserAccountMobileNav user={user} />}
 
           <div className="hidden items-center space-x-4 sm:flex">
-            <Link href="/pricing">
-              <Typography variant="link" component="span">
-                Pricing
-              </Typography>
-            </Link>
             {!user?.id ? (
               <>
+                <Link href="/pricing">
+                  <Typography variant="link" component="span">
+                    Pricing
+                  </Typography>
+                </Link>
                 <SignInButton>
                   <Button size="default">Sign in</Button>
                 </SignInButton>
