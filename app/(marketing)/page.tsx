@@ -28,7 +28,7 @@ export default async function IndexPage() {
         <Typography
           variant="display1"
           component="h1"
-          className="max-w-[700px] text-center"
+          className="w-full md:max-w-[700px] text-center"
         >
           The SaaS Solution for{" "}
           <Typography
@@ -45,7 +45,7 @@ export default async function IndexPage() {
         <Typography
           variant="lead"
           component="p"
-          className="max-w-[500px] text-center"
+          className="w-full md:max-w-[500px] text-center"
         >
           Here you can write a short description of your SaaS This subheading is
           usually laid out on multiple lines Impress your customers, straight to

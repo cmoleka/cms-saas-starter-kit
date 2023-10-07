@@ -54,13 +54,16 @@ export default async function Pricing() {
                     features.map((feature, index) => (
                       <li className="flex gap-2 items-center" key={index}>
                         <Icons.checkBox className="h-4 w-4 stroke-green-700" />
-                        <Typography variant="sm" component="p">
+                        <Typography
+                          variant="sm"
+                          component="p"
+                          className="text-left"
+                        >
                           {feature}
                         </Typography>
                       </li>
                     ))}
                 </ul>
-                P
               </div>
             </div>
           </div>
