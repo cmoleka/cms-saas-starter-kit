@@ -5,11 +5,11 @@
       .cls-1 {
         fill: none;
         stroke: #000;
-        stroke-width: 20px;
+        strokeWidth: 20px;
       }
 
       .cls-2 {
-        stroke-width: 0px;
+        strokeWidth: 0px;
       }
     </style>
   </defs>

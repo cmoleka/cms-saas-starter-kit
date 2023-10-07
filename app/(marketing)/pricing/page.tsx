@@ -1,4 +1,3 @@
-import { Metadata } from "next"
 import { clsx } from "clsx"
 
 import { pullPricingTableData } from "@/lib/services/pricingTableData"
@@ -39,9 +38,9 @@ export default async function PricingPage() {
           Easy & flexible pricing
         </Typography>
         <Typography
-          variant="large"
+          variant="lead"
           component="p"
-          className="w-full px-4 text-center font-semibold md:w-[572px] md:px-0"
+          className="w-full px-4 text-center md:w-[572px] md:px-0"
         >
           Whatever plan you choose, know that our AI will generate the best
           marketing copy.

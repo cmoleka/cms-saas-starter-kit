@@ -4,7 +4,6 @@ import { currentUser, SignInButton, SignUpButton } from "@clerk/nextjs"
 
 import { Button } from "@/components/ui/button"
 import { Typography } from "@/components/ui/typography"
-import { Icons } from "@/components/icons"
 import MobileNav from "@/components/mobile-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 import UserAccountMobileNav from "@/components/user-account-mobile-nav"
@@ -14,7 +13,7 @@ const Navbar = async () => {
   const user = await currentUser()
 
   return (
-    <nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-slate-100 dark:border-slate-700 bg-white/75 dark:bg-slate-900 backdrop-blur-lg transition-all">
+    <nav className="supports-backdrop-blur:bg-background/60 sticky h-14 inset-x-0 top-0 z-30 w-full border-b  bg-background/95 backdrop-blur transition-all">
       <div className="px-5">
         <div className="flex h-14 items-center justify-between">
           <Link href="/" className="flex z-40">
@@ -32,13 +31,10 @@ const Navbar = async () => {
                   </Typography>
                 </Link>
                 <SignInButton>
-                  <Button size="default">Sign in</Button>
+                  <Button>Sign in</Button>
                 </SignInButton>
                 <SignUpButton>
-                  <Button variant="secondary">
-                    <Icons.sun className="mr-2 h-4 w-4" />
-                    Sign up
-                  </Button>
+                  <Button variant="secondary">Sign up</Button>
                 </SignUpButton>
               </>
             ) : (

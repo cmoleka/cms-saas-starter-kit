@@ -19,8 +19,8 @@ export default async function IndexPage() {
   return (
     <>
       {/* Hero Copy */}
-      <div className="mt-16 flex flex-col items-center gap-4">
-        <Badge className="bg-slate-600 px-2 py-1">
+      <div className="mt-16 flex flex-col items-center gap-y-6">
+        <Badge className="px-2 py-1">
           <Typography variant="xs" component="span">
             The leading SaaS starter Kit for ambitious developers
           </Typography>
@@ -34,7 +34,7 @@ export default async function IndexPage() {
           <Typography
             variant="display1"
             component="span"
-            className="bg-clip-text text-transparent bg-gradient-to-r from-slate-400 to-slate-700"
+            className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 to-primary"
           >
             developers and founders
           </Typography>

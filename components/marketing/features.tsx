@@ -99,7 +99,7 @@ export default function Features() {
               <Typography
                 variant="display2"
                 component="h2"
-                className="bg-clip-text text-transparent bg-gradient-to-r from-slate-500 to-slate-900 dark:from-slate-100 dark:to-slate-500"
+                className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 to-primary dark:from-slate-100 dark:to-slate-500"
               >
                 Discover Our Unique Features
               </Typography>
@@ -180,18 +180,10 @@ const KeyFeature: React.FC<KeyFeaturesType> = ({
             <Typography variant="h2" component="h2" className="text-left">
               {leftContent.title}
             </Typography>
-            <Typography
-              variant="lead"
-              component="p"
-              className="text-left text-primary/70"
-            >
+            <Typography variant="lead" component="p" className="text-left">
               {leftContent.subTitle}
             </Typography>
-            <Typography
-              variant="sm"
-              component="p"
-              className="text-left text-primary mt-6"
-            >
+            <Typography variant="sm" component="p" className="text-left mt-6">
               {leftContent.description}
             </Typography>
           </div>

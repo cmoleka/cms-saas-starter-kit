@@ -15,9 +15,9 @@ export function ShadcnUILogo(props: any) {
           y2="208"
           fill="none"
           stroke="#9BA2A7"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="16"
         ></line>
         <line
           x1="192"
@@ -26,9 +26,9 @@ export function ShadcnUILogo(props: any) {
           y2="192"
           fill="none"
           stroke="#9BA2A7"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="16"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="16"
         ></line>
       </svg>
       <span {...props}>shadcn/ui</span>

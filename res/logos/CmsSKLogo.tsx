@@ -7,7 +7,7 @@ export function CmsSKLogo(props: any) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1146 216"
       width="150"
-      height="auto"
+      height="38"
     >
       <g id="Layer_1-2" data-name="Layer 1">
         <path

@@ -24,7 +24,7 @@ const typographyVariants = cva(
         body: "leading-7 [&:not(:first-child)]:mt-5",
         sm: "text-sm tracking-tight leading-tight text-inherit",
         xs: "text-xs tracking-tight leading-tight text-inherit",
-        link: "text-sm font-medium text-primary hover:text-primary/90 inline-flex items-center justify-center h-10 px-4 py-2",
+        link: "font-medium transition-colors text-foreground hover:text-foreground/60 inline-flex items-center justify-center h-10 px-4 py-2",
         none: "",
       },
       component: {

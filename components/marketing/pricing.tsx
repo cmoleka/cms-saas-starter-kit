@@ -25,8 +25,8 @@ export default async function Pricing() {
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 items-center">
           <div className="flex flex-col justify-center space-y-8 text-center">
-            <div className="space-y-2">
-              <Badge className="bg-slate-600 px-2 py-1">
+            <div className="space-y-6">
+              <Badge className="px-2 py-1">
                 <Typography variant="xs" component="span">
                   Get started for free. No credit card required. Cancel anytime.
                 </Typography>
@@ -34,9 +34,16 @@ export default async function Pricing() {
               <Typography
                 variant="display2"
                 component="h2"
-                className="bg-clip-text text-transparent bg-gradient-to-r from-slate-500 to-slate-900 dark:from-slate-100 dark:to-slate-500 max-w-[600px] mx-auto"
+                className="mx-auto max-w-[600px] text-center"
               >
-                Ready to take your SaaS business to the next level?
+                Ready to take your SaaS{" "}
+                <Typography
+                  variant="display2"
+                  component="span"
+                  className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 to-primary dark:from-slate-100 dark:to-slate-500"
+                >
+                  business to the next level?
+                </Typography>
               </Typography>
               <Typography
                 variant="lead"
