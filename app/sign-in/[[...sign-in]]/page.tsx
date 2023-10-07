@@ -9,7 +9,7 @@ export const metadata = constructMetadata({
 
 export default function SignInPage() {
   return (
-    <div className="mt-16 flex flex-col justify-center items-center gap-4">
+    <div className="mt-16 flex flex-col items-center justify-center gap-4">
       <SignIn />
     </div>
   )

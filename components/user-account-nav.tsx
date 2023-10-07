@@ -33,8 +33,8 @@ const UserAccountNav = async ({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="overflow-visible">
-        <Button className="rounded-full h-8 w-8 aspect-square bg-slate-400">
-          <Avatar className="relative w-8 h-8">
+        <Button className="aspect-square h-8 w-8 rounded-full bg-slate-400">
+          <Avatar className="relative h-8 w-8">
             {imageUrl ? (
               <div className="relative aspect-square h-full w-full">
                 <Image
@@ -61,13 +61,13 @@ const UserAccountNav = async ({
         <DropdownMenuGroup>
           <DropdownMenuItem asChild>
             <Link href={`/dashboard/${userId}`}>
-              <Icons.dashboard className="h-4 w-4 mr-2" />
+              <Icons.dashboard className="mr-2 h-4 w-4" />
               Dashboard
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
             <Link href={`/dashboard/${userId}/settings/profile`}>
-              <Icons.user className="h-4 w-4 mr-2" />
+              <Icons.user className="mr-2 h-4 w-4" />
               Profile
             </Link>
           </DropdownMenuItem>
@@ -75,12 +75,12 @@ const UserAccountNav = async ({
           <DropdownMenuItem asChild>
             {subscriptionPlan ? (
               <Link href={`/dashboard/${userId}/settings/subscription`}>
-                <Icons.upgrade className="h-4 w-4 mr-2" />
+                <Icons.upgrade className="mr-2 h-4 w-4" />
                 Manage Subscription
               </Link>
             ) : (
               <Link href={`/dashboard/${userId}/settings/subscription`}>
-                <Icons.upgrade className="h-4 w-4 mr-2" />
+                <Icons.upgrade className="mr-2 h-4 w-4" />
                 Upgrade
               </Link>
             )}
@@ -90,7 +90,7 @@ const UserAccountNav = async ({
         <DropdownMenuItem>
           <SignOutButton>
             <Button className="w-full">
-              <Icons.logout className="h-4 w-4 mr-2" />
+              <Icons.logout className="mr-2 h-4 w-4" />
               Sign Out
             </Button>
           </SignOutButton>

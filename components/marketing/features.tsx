@@ -93,13 +93,13 @@ export default function Features() {
   return (
     <section className="w-full py-12">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-6 items-center">
+        <div className="grid items-center gap-6">
           <div className="flex flex-col justify-center space-y-8 text-center">
             <div className="space-y-2">
               <Typography
                 variant="display2"
                 component="h2"
-                className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 to-primary dark:from-slate-100 dark:to-slate-500"
+                className="bg-gradient-to-r from-primary/50 to-primary bg-clip-text text-transparent dark:from-slate-100 dark:to-slate-500"
               >
                 Discover Our Unique Features
               </Typography>
@@ -112,7 +112,7 @@ export default function Features() {
                 streamline your workflow.
               </Typography>
             </div>
-            <div className="w-full max-w-full space-y-4 mx-auto">
+            <div className="mx-auto w-full max-w-full space-y-4">
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
                 {features.length &&
                   features.map((feature, index) => (
@@ -143,8 +143,8 @@ const FeaturedItem: React.FC<FeaturedItemProps> = ({
   description,
 }) => {
   return (
-    <div className="flex flex-col items-center space-y-2 border-slate-900 p-4 rounded-lg">
-      <div className="p-2 rounded-full">
+    <div className="flex flex-col items-center space-y-2 rounded-lg border-slate-900 p-4">
+      <div className="rounded-full p-2">
         {Icon && (
           <Icon className="h-8 w-8 text-slate-500 dark:text-slate-100" />
         )}
@@ -152,7 +152,7 @@ const FeaturedItem: React.FC<FeaturedItemProps> = ({
       <Typography
         variant="h3"
         component="h3"
-        className="dark:text-slate-100 text-slate-900"
+        className="text-slate-900 dark:text-slate-100"
       >
         {title}
       </Typography>
@@ -174,7 +174,7 @@ const KeyFeature: React.FC<KeyFeaturesType> = ({
 
   return (
     <div className={layoutClasses}>
-      <div className="lg:w-1/2 p-4 flex flex-col items-start">
+      <div className="flex flex-col items-start p-4 lg:w-1/2">
         {leftContent && (
           <div className="mb-4">
             <Typography variant="h2" component="h2" className="text-left">
@@ -183,7 +183,7 @@ const KeyFeature: React.FC<KeyFeaturesType> = ({
             <Typography variant="lead" component="p" className="text-left">
               {leftContent.subTitle}
             </Typography>
-            <Typography variant="sm" component="p" className="text-left mt-6">
+            <Typography variant="sm" component="p" className="mt-6 text-left">
               {leftContent.description}
             </Typography>
           </div>
@@ -197,14 +197,14 @@ const KeyFeature: React.FC<KeyFeaturesType> = ({
           </Button>
         )}
       </div>
-      <div className="lg:w-1/2 p-4">
+      <div className="p-4 lg:w-1/2">
         {rightContent && (
-          <div className="w-full h-[500px] relative">
+          <div className="relative h-[500px] w-full">
             <Image
               src={rightContent.imageSrc}
               alt={rightContent.imageAlt}
               fill
-              className="rounded-md object-cover absolute"
+              className="absolute rounded-md object-cover"
             />
           </div>
         )}

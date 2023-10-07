@@ -28,7 +28,7 @@ export default async function DashboardUserPage({
   const user = await currentUser()
 
   return (
-    <main className="w-full p-3 flex flex-col flex-1">
+    <main className="flex w-full flex-1 flex-col p-3">
       <div className="flex flex-col space-y-6 pb-36">
         <WelcomeMessage />
         <Tabs defaultValue="overview" className="space-y-4">

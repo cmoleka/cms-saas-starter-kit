@@ -14,7 +14,7 @@ const EmailHeader = () => {
           width="40"
           height="37"
           alt="Vercel"
-          className="my-0 mx-auto"
+          className="mx-auto my-0"
         />
       </Link>
     </Section>

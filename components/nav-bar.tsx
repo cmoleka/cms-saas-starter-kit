@@ -13,10 +13,10 @@ const Navbar = async () => {
   const user = await currentUser()
 
   return (
-    <nav className="supports-backdrop-blur:bg-background/60 sticky h-14 inset-x-0 top-0 z-30 w-full border-b  bg-background/95 backdrop-blur transition-all">
+    <nav className="supports-backdrop-blur:bg-background/60 sticky inset-x-0 top-0 z-30 h-14 w-full border-b  bg-background/95 backdrop-blur transition-all">
       <div className="px-5">
         <div className="flex h-14 items-center justify-between">
-          <Link href="/" className="flex z-40">
+          <Link href="/" className="z-40 flex">
             <CmsSKLogo />
           </Link>
 

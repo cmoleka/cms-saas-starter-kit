@@ -51,7 +51,7 @@ export default function PricingPlans({ pricings }: PricingsProps) {
               <Typography
                 variant="sm"
                 component="span"
-                className="uppercase font-bold"
+                className="font-bold uppercase"
               >
                 {plan?.name}
               </Typography>
@@ -61,7 +61,7 @@ export default function PricingPlans({ pricings }: PricingsProps) {
             </div>
             {plan?.promoted ? (
               <Button>
-                <Icons.upgrade className="h-4 w-4 mr-2" />
+                <Icons.upgrade className="mr-2 h-4 w-4" />
                 Buy {plan?.name} license
               </Button>
             ) : (

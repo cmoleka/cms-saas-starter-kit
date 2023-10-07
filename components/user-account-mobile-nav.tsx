@@ -28,8 +28,8 @@ export default function UserAccountMobileNav({
   return (
     <Sheet>
       <SheetTrigger className="sm:hidden" asChild>
-        <Button className="rounded-full h-8 w-8 aspect-square bg-slate-400">
-          <Avatar className="relative w-8 h-8">
+        <Button className="aspect-square h-8 w-8 rounded-full bg-slate-400">
+          <Avatar className="relative h-8 w-8">
             {user.imageUrl ? (
               <div className="relative aspect-square h-full w-full">
                 <Image
@@ -51,7 +51,7 @@ export default function UserAccountMobileNav({
       <SheetContent>
         <SheetHeader className="text-left">
           <div className="flex flex-col space-y-1.5">
-            <Avatar className="relative w-12 h-12">
+            <Avatar className="relative h-12 w-12">
               {user.imageUrl ? (
                 <div className="relative aspect-square h-full w-full">
                   <Image
@@ -80,29 +80,29 @@ export default function UserAccountMobileNav({
         <div className="grid gap-4 py-4">
           <Button asChild>
             <Link href={`/dashboard/${user.id}`}>
-              <Icons.dashboard className="h-4 w-4 mr-2" />
+              <Icons.dashboard className="mr-2 h-4 w-4" />
               Dashboard
             </Link>
           </Button>
           <Button asChild>
             <Link href={`/dashboard/${user.id}/settings/profile`}>
-              <Icons.user className="h-4 w-4 mr-2" />
+              <Icons.user className="mr-2 h-4 w-4" />
               Profile
             </Link>
           </Button>
           <Button asChild>
             <Link href={`/dashboard/${user.id}/settings/subscription`}>
-              <Icons.upgrade className="h-4 w-4 mr-2" />
+              <Icons.upgrade className="mr-2 h-4 w-4" />
               Manage Subscription
             </Link>
           </Button>
           <Separator />
         </div>
         <SheetFooter>
-          <div className="flex flex-col space-y-8 items-end">
+          <div className="flex flex-col items-end space-y-8">
             <SignOutButton>
               <Button className="w-full">
-                <Icons.logout className="h-4 w-4 mr-2" />
+                <Icons.logout className="mr-2 h-4 w-4" />
                 Sign Out
               </Button>
             </SignOutButton>

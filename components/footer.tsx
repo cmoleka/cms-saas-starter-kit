@@ -19,7 +19,7 @@ export function Footer() {
       {/* Logos */}
       <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         <NextJSLogo />
-        <ShadcnUILogo className="text-[#9BA2A7] font-bold" />
+        <ShadcnUILogo className="font-bold text-[#9BA2A7]" />
         <PrismaLogo />
         <TrpcLogo />
         <ClerkLogo />

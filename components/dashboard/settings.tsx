@@ -10,7 +10,6 @@ interface SettingsProps {
 
 export default function Settings({ children }: SettingsProps) {
   const segment = useSelectedLayoutSegment()
-  if (!segment) return null
 
   const { userId } = useParams()
   const router = useRouter()
@@ -18,6 +17,8 @@ export default function Settings({ children }: SettingsProps) {
   const handleTabChange = (value: string) => {
     router.push(`/dashboard/${userId}/settings/${value}`)
   }
+
+  if (!segment) return null
 
   return (
     <Tabs

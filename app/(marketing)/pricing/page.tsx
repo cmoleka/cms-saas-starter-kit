@@ -62,7 +62,7 @@ export default async function PricingPage() {
                 <Typography
                   variant="sm"
                   component="span"
-                  className="uppercase font-bold"
+                  className="font-bold uppercase"
                 >
                   {plan?.name}
                 </Typography>
@@ -86,7 +86,7 @@ export default async function PricingPage() {
               </div>
               {plan?.promoted ? (
                 <Button>
-                  <Icons.upgrade className="h-4 w-4 mr-2" />
+                  <Icons.upgrade className="mr-2 h-4 w-4" />
                   Buy {plan?.name} license
                 </Button>
               ) : (
@@ -105,11 +105,11 @@ export default async function PricingPage() {
           ))}
         </div>
       </div>
-      <div className="w-full max-w-[600px] mx-auto">
+      <div className="mx-auto w-full max-w-[600px]">
         <ul className="my-6 flex flex-col gap-4">
           {features.length &&
             features.map((feature, index) => (
-              <li className="flex gap-2 items-center" key={index}>
+              <li className="flex items-center gap-2" key={index}>
                 <Icons.checkBox className="h-4 w-4 stroke-green-700" />
                 <Typography variant="sm" component="p">
                   {feature}

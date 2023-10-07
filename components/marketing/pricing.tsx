@@ -23,7 +23,7 @@ export default async function Pricing() {
   return (
     <section className="w-full py-12">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-6 items-center">
+        <div className="grid items-center gap-6">
           <div className="flex flex-col justify-center space-y-8 text-center">
             <div className="space-y-6">
               <Badge className="px-2 py-1">
@@ -40,7 +40,7 @@ export default async function Pricing() {
                 <Typography
                   variant="display2"
                   component="span"
-                  className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 to-primary dark:from-slate-100 dark:to-slate-500"
+                  className="bg-gradient-to-r from-primary/50 to-primary bg-clip-text text-transparent dark:from-slate-100 dark:to-slate-500"
                 >
                   business to the next level?
                 </Typography>
@@ -53,13 +53,13 @@ export default async function Pricing() {
                 Get started on our free plan and upgrade when you are ready.
               </Typography>
             </div>
-            <div className="w-full max-w-[600px] space-y-4 mx-auto">
+            <div className="mx-auto w-full max-w-[600px] space-y-4">
               <PricingPlans pricings={pricings} />
-              <div className="w-full max-w-[600px] mx-auto">
+              <div className="mx-auto w-full max-w-[600px]">
                 <ul className="my-6 flex flex-col gap-4">
                   {features.length &&
                     features.map((feature, index) => (
-                      <li className="flex gap-2 items-center" key={index}>
+                      <li className="flex items-center gap-2" key={index}>
                         <Icons.checkBox className="h-4 w-4 stroke-green-700" />
                         <Typography
                           variant="sm"

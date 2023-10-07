@@ -16,7 +16,7 @@ const MobileNav = () => {
 
   useEffect(() => {
     if (isOpen) toggleOpen()
-  }, [pathname])
+  }, [pathname, isOpen])
 
   const closeOnCurrent = (href: string) => {
     if (pathname === href) {
@@ -32,12 +32,12 @@ const MobileNav = () => {
       />
 
       {isOpen ? (
-        <div className="fixed animate-in slide-in-from-top-5 fade-in-20 inset-0 z-0 w-full">
-          <ul className="absolute bg-white dark:bg-slate-900 border-b border-zinc-200 shadow-xl grid w-full gap-3 px-10 pt-20 pb-8">
+        <div className="fixed inset-0 z-0 w-full animate-in fade-in-20 slide-in-from-top-5">
+          <ul className="absolute grid w-full gap-3 border-b border-zinc-200 bg-white px-10 pb-8 pt-20 shadow-xl dark:bg-slate-900">
             <li>
               <Link
                 onClick={() => closeOnCurrent("/sign-up")}
-                className="flex items-center w-full font-semibold text-green-600"
+                className="flex w-full items-center font-semibold text-green-600"
                 href="/sign-up"
               >
                 Get started
@@ -48,7 +48,7 @@ const MobileNav = () => {
             <li>
               <Link
                 onClick={() => closeOnCurrent("/sign-in")}
-                className="flex items-center w-full font-semibold"
+                className="flex w-full items-center font-semibold"
                 href="/sign-in"
               >
                 Sign in
@@ -58,7 +58,7 @@ const MobileNav = () => {
             <li>
               <Link
                 onClick={() => closeOnCurrent("/pricing")}
-                className="flex items-center w-full font-semibold"
+                className="flex w-full items-center font-semibold"
                 href="/pricing"
               >
                 Pricing

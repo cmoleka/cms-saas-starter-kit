@@ -28,13 +28,13 @@ export default async function IndexPage() {
         <Typography
           variant="display1"
           component="h1"
-          className="w-full md:max-w-[700px] text-center"
+          className="w-full text-center md:max-w-[700px]"
         >
           The SaaS Solution for{" "}
           <Typography
             variant="display1"
             component="span"
-            className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 to-primary"
+            className="bg-gradient-to-r from-primary/50 to-primary bg-clip-text text-transparent"
           >
             developers and founders
           </Typography>
@@ -45,7 +45,7 @@ export default async function IndexPage() {
         <Typography
           variant="lead"
           component="p"
-          className="w-full md:max-w-[500px] text-center"
+          className="w-full text-center md:max-w-[500px]"
         >
           Here you can write a short description of your SaaS This subheading is
           usually laid out on multiple lines Impress your customers, straight to
@@ -64,12 +64,12 @@ export default async function IndexPage() {
         </Typography>
       </div>
       <div className="flex flex-col items-center">
-        <div className="w-full md:w-3/4 h-[500px] relative bg-cyan-500 shadow-2xl shadow-cyan-500/50 rounded-lg">
+        <div className="relative h-[500px] w-full rounded-lg bg-cyan-500 shadow-2xl shadow-cyan-500/50 md:w-3/4">
           <Image
             src="https://images.unsplash.com/photo-1634245482394-1bcf5ccffcc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
             alt="Preview"
             fill
-            className="rounded-md object-cover absolute"
+            className="absolute rounded-md object-cover"
           />
         </div>
       </div>

@@ -76,7 +76,7 @@ export default function SubscriptionPlans({
                   <Button
                     variant="secondary"
                     disabled={true}
-                    className="w-[256px] hover:bg-crimson-3"
+                    className="hover:bg-crimson-3 w-[256px]"
                   >
                     Current plan
                   </Button>

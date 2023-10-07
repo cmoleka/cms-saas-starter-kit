@@ -1,5 +1,5 @@
 import { Skeleton } from "@/components/ui/skeleton"
 
 export default async function DashboardLoading() {
-  return <Skeleton className="w-full p-3 flex flex-col flex-1" />
+  return <Skeleton className="flex w-full flex-1 flex-col p-3" />
 }

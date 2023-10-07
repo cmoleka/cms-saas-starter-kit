@@ -41,18 +41,18 @@ export const WelcomeTemplate = ({
       <Head />
       <Preview>{previewText}</Preview>
       <Tailwind>
-        <Body className="bg-white my-auto mx-auto font-sans">
-          <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
+        <Body className="m-auto bg-white font-sans">
+          <Container className="mx-auto my-[40px] w-[465px] rounded border border-solid border-[#eaeaea] p-[20px]">
             <EmailHeader />
-            <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
+            <Heading className="mx-0 my-[30px] p-0 text-center text-[24px] font-normal text-black">
               Welcome to <strong>{siteConfig.name}</strong>
             </Heading>
-            <Text className="text-black text-[14px] leading-[24px]">
+            <Text className="text-[14px] leading-[24px] text-black">
               Hello {firstName},
             </Text>
-            <Text className="text-black text-[14px] leading-[24px]">
-              Thanks for joining {siteConfig.name}! We're excited to have you on
-              board.
+            <Text className="text-[14px] leading-[24px] text-black">
+              Thanks for joining {siteConfig.name}! We&apos;re excited to have
+              you on board.
             </Text>
             <Section>
               <Row>
