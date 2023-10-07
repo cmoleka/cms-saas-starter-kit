@@ -2,7 +2,7 @@
 
 import { useUser } from "@clerk/nextjs"
 
-import { Typography } from "../ui/typography"
+import { Typography } from "@/components/ui/typography"
 
 const WelcomeMessage = () => {
   const { user } = useUser()

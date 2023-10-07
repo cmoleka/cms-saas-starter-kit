@@ -3,9 +3,8 @@ import { clsx } from "clsx"
 
 import { Button } from "@/components/ui/button"
 import { Typography } from "@/components/ui/typography"
+import { CheckoutButton } from "@/components/dashboard/checkout-button"
 import { Icons } from "@/components/icons"
-
-import { CheckoutButton } from "./checkout-button"
 
 type PricingPlan =
   | {

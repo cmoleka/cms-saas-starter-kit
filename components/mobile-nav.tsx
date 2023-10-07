@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ArrowRight, Menu } from "lucide-react"
 
-import { ThemeToggle } from "./theme-toggle"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const MobileNav = () => {
   const [isOpen, setOpen] = useState<boolean>(false)

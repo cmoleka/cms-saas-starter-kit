@@ -1,9 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { Icons, type Icon, type IconProps } from "../icons"
-import { Button } from "../ui/button"
-import { Typography } from "../ui/typography"
+import { Button } from "@/components/ui/button"
+import { Typography } from "@/components/ui/typography"
+import { Icons, type Icon, type IconProps } from "@/components/icons"
 
 type Features = {
   Icon: Icon

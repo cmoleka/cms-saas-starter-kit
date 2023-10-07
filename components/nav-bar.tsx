@@ -2,13 +2,13 @@ import Link from "next/link"
 import { CmsSKLogo } from "@/res/logos/CmsSKLogo"
 import { currentUser, SignInButton, SignUpButton } from "@clerk/nextjs"
 
-import { Icons } from "./icons"
-import MobileNav from "./mobile-nav"
-import { ThemeToggle } from "./theme-toggle"
-import { Button } from "./ui/button"
-import { Typography } from "./ui/typography"
-import UserAccountMobileNav from "./user-account-mobile-nav"
-import UserAccountNav from "./user-account-nav"
+import { Button } from "@/components/ui/button"
+import { Typography } from "@/components/ui/typography"
+import { Icons } from "@/components/icons"
+import MobileNav from "@/components/mobile-nav"
+import { ThemeToggle } from "@/components/theme-toggle"
+import UserAccountMobileNav from "@/components/user-account-mobile-nav"
+import UserAccountNav from "@/components/user-account-nav"
 
 const Navbar = async () => {
   const user = await currentUser()

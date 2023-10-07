@@ -1,6 +1,5 @@
 import { siteConfig } from "@/config/site"
-
-import { Typography } from "./ui/typography"
+import { Typography } from "@/components/ui/typography"
 
 export function SiteFooter() {
   return (

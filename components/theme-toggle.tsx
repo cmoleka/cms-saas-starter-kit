@@ -10,8 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-
-import { Icons } from "./icons"
+import { Icons } from "@/components/icons"
 
 export function ThemeToggle() {
   const { setTheme } = useTheme()

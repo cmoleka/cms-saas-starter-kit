@@ -8,7 +8,7 @@ import { TierLogo } from "@/res/logos/TierLogo"
 import { TrpcLogo } from "@/res/logos/TrpcLogo"
 import { VercelLogo } from "@/res/logos/VercelLogo"
 
-import { Typography } from "./ui/typography"
+import { Typography } from "@/components/ui/typography"
 
 export function Footer() {
   return (

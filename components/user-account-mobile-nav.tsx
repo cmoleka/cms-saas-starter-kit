@@ -4,6 +4,8 @@ import { ClerkGetFirstEmailUser } from "@/utils"
 import { SignOutButton } from "@clerk/nextjs"
 import type { User } from "@clerk/nextjs/server"
 
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import {
   Sheet,
@@ -12,12 +14,9 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet"
-
-import { Icons } from "./icons"
-import { ThemeToggle } from "./theme-toggle"
-import { Avatar, AvatarFallback } from "./ui/avatar"
-import { Button } from "./ui/button"
-import { Typography } from "./ui/typography"
+import { Typography } from "@/components/ui/typography"
+import { Icons } from "@/components/icons"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 type UserAccountMobileNavProps = {
   user: User

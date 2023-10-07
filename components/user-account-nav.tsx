@@ -4,9 +4,8 @@ import Link from "next/link"
 import { TierIsSubscribed } from "@/utils/tier"
 import { SignOutButton } from "@clerk/nextjs"
 
-import { Icons } from "./icons"
-import { Avatar, AvatarFallback } from "./ui/avatar"
-import { Button } from "./ui/button"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,7 +14,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
+import { Icons } from "@/components/icons"
 
 interface UserAccountNavProps {
   name: string
