@@ -12,7 +12,7 @@ export const metadata = constructMetadata({
 export default function NotFound() {
   return (
     <div className="mt-32 flex flex-col items-center justify-center gap-4">
-      <div className="flex flex-col lg:flex-row space-y-5 lg:space-y-0 lg:space-x-5 lg:divide-x items-center lg:items-start">
+      <div className="flex flex-col items-center space-y-5 lg:flex-row lg:items-start lg:space-x-5 lg:space-y-0 lg:divide-x">
         <Typography variant="h2" component="h1">
           404
         </Typography>
@@ -24,7 +24,7 @@ export default function NotFound() {
             The page you are looking for might have been removed, had its name
             changed, or is temporarily unavailable.
           </Typography>
-          <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-4">
+          <div className="flex flex-col space-y-5 md:flex-row md:space-x-4 md:space-y-0">
             <Button variant="secondary" asChild>
               <Link href="/">Contact Us</Link>
             </Button>
