@@ -11,6 +11,7 @@ This starter kit is a great starting point for building a SaaS application.
 - [Live demo](https://cms-saas-starter-kit.vercel.app/)
 
 ## Features
+
 - NextJS 13 `/app` folder structure
 - ORM Prisma
 - Tailwind CSS
@@ -20,11 +21,10 @@ This starter kit is a great starting point for building a SaaS application.
 - tRPC
 - Clerk (Auth)
 - Pricing using Tier and Stripe
- - Pricing model using Tier Model Builder
- - Subscriptions and Checkout
- - Pricing table
+  - Pricing model using Tier Model Builder
+  - Subscriptions and Checkout
+  - Pricing table
 - Database on **Vercel Postgress**
-
 
 ## Why CMS SaaS starter kit?
 
