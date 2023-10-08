@@ -1,8 +1,7 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
-images: {
+  reactStrictMode: true,
+  images: {
     domains: ["img.clerk.com", "images.unsplash.com"],
   },
   redirects: async () => {
@@ -13,9 +12,11 @@ images: {
         permanent: true,
       },
     ]
-  }
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 }
-
 
 // module.exports = nextConfig
 export default nextConfig

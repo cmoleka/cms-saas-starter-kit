@@ -1,5 +1,3 @@
-import { currentUser } from "@clerk/nextjs"
-
 import { constructMetadata } from "@/lib/utils"
 import {
   Card,
@@ -18,15 +16,7 @@ export const metadata = constructMetadata({
   description: "User dashboard for the SaaS Starter Kit.",
 })
 
-interface DashboardPageProps {
-  userId: string
-}
-
-export default async function DashboardUserPage({
-  userId,
-}: DashboardPageProps) {
-  const user = await currentUser()
-
+export default async function DashboardUserPage() {
   return (
     <main className="flex w-full flex-1 flex-col p-3">
       <div className="flex flex-col space-y-6 pb-36">

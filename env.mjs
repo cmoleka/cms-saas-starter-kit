@@ -8,8 +8,6 @@ export const env = createEnv({
     NODE_ENV: z.enum(["development", "test", "production"]),
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().min(1),
     CLERK_SECRET_KEY: z.string().min(1),
-    TWITTER_CLIENT_ID: z.string().min(1),
-    TWITTER_CLIENT_SECRET: z.string().min(1),
     TIER_BASE_URL: z.string().min(1),
     TIER_API_KEY: z.string().min(1),
     RESEND_API_KEY: z.string().min(1),
@@ -37,8 +35,6 @@ export const env = createEnv({
       process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL,
     NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL:
       process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL,
-    TWITTER_CLIENT_ID: process.env.TWITTER_CLIENT_ID,
-    TWITTER_CLIENT_SECRET: process.env.TWITTER_CLIENT_SECRET,
     TIER_BASE_URL: process.env.TIER_BASE_URL,
     TIER_API_KEY: process.env.TIER_API_KEY,
     CLERK_WEBHOOK_SECRET: process.env.CLERK_WEBHOOK_SECRET,
