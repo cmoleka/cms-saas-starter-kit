@@ -8,8 +8,8 @@ export const siteConfig: SiteConfig = {
     url: env.NEXT_PUBLIC_APP_URL,
     ogImage: `${env.NEXT_PUBLIC_APP_URL}/og.jpg`,
     links: {
-        twitter: "https://twitter.com/carlomoleka",
-        github: "https://github.com/cmoleka/cms-saas-starter",
+        twitter: "https://twitter.com/cmsistech",
+        github: "https://github.com/cmoleka/cms-saas-starter-kit",
     },
     keywords: ["cms-saas-starter", "nextjs", "vercel", "postgres"],
     authors: [
