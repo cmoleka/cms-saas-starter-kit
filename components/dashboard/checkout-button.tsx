@@ -28,13 +28,13 @@ export function CheckoutButton({
           variant: "destructive",
         })
       }
-      toast({
-        title: "Plan upgrade initiated.",
-        description: "Please wait while we redirect you to the payment page.",
-        variant: "default",
-      })
       const session = await response.json()
       if (session) {
+        toast({
+          title: "Plan upgrade initiated.",
+          description: "Please wait while we redirect you to the payment page.",
+          variant: "default",
+        })
         window.location.href = session.url
       }
     } catch (error) {
@@ -45,7 +45,6 @@ export function CheckoutButton({
   return (
     <>
       <Button
-        variant="outline"
         className="w-[256px]"
         type="submit"
         name="planId"

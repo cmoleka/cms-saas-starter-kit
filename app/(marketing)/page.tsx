@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 import { constructMetadata } from "@/lib/utils"
@@ -7,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Typography } from "@/components/ui/typography"
 import { Icons } from "@/components/icons"
 import Features from "@/components/marketing/features"
+import { HeroImage } from "@/components/marketing/hero-image"
 import Pricings from "@/components/marketing/pricing"
 
 export const metadata = constructMetadata({
@@ -22,7 +22,7 @@ export default async function IndexPage() {
       <div className="mt-16 flex flex-col items-center gap-y-6">
         <Badge className="px-2 py-1">
           <Typography variant="xs" component="span">
-            The leading SaaS starter Kit for ambitious developers
+            🚀 Turbocharge Your SaaS Development
           </Typography>
         </Badge>
         <Typography
@@ -47,9 +47,8 @@ export default async function IndexPage() {
           component="p"
           className="w-full text-center md:max-w-[500px]"
         >
-          Here you can write a short description of your SaaS This subheading is
-          usually laid out on multiple lines Impress your customers, straight to
-          the point.
+          Simplify Your Development Journey with Our Feature-Packed SaaS Starter
+          Pack. Get Straight to Building Amazing Products.
         </Typography>
         <div className="flex flex-col items-center gap-2 md:flex-row md:gap-4">
           <Button size="lg" variant="default" asChild>
@@ -59,18 +58,10 @@ export default async function IndexPage() {
             </Link>
           </Button>
         </div>
-        <Typography variant="xs" component="p">
-          Free plan. No credit card required.
-        </Typography>
       </div>
       <div className="flex flex-col items-center">
         <div className="relative h-[500px] w-full rounded-lg bg-cyan-500 shadow-2xl shadow-cyan-500/50 md:w-3/4">
-          <Image
-            src="https://images.unsplash.com/photo-1634245482394-1bcf5ccffcc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-            alt="Preview"
-            fill
-            className="absolute rounded-md object-cover"
-          />
+          <HeroImage />
         </div>
       </div>
       <Features />

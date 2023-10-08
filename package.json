@@ -12,7 +12,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "commit": "cz"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.25.1",

@@ -1,20 +1,24 @@
 {
   "plans": {
-    "plan:free@0": {
+    "plan:free@3": {
       "title": "Free",
+      "currency": "USD",
+      "interval": "@yearly",
       "features": {
         "feature:base": {
           "base": 0,
-          "title": "base"
+          "title": "Base"
         }
       }
     },
-    "plan:allin@2": {
-      "title": "All In",
+    "plan:business@3": {
+      "title": "Business",
+      "currency": "USD",
+      "interval": "@yearly",
       "features": {
         "feature:base": {
           "base": 5000,
-          "title": "base"
+          "title": "Base"
         }
       }
     }

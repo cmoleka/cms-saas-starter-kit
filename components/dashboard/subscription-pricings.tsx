@@ -1,4 +1,4 @@
-import type { CurrentPlan } from "@/types"
+import type { CurrentPlan, PricingTableData } from "@/types"
 import { clsx } from "clsx"
 
 import { Button } from "@/components/ui/button"
@@ -6,20 +6,8 @@ import { Typography } from "@/components/ui/typography"
 import { CheckoutButton } from "@/components/dashboard/checkout-button"
 import { Icons } from "@/components/icons"
 
-type PricingPlan =
-  | {
-      planId: `plan:${string}@${string}`
-      currency: string
-      interval: string
-      promoted: boolean
-      name: string
-      base: number
-      features: string[]
-    }
-  | undefined
-
 interface PricingsProps {
-  pricings: PricingPlan[]
+  pricings: PricingTableData[]
   currantPlan: CurrentPlan
 }
 
@@ -52,23 +40,37 @@ export default function SubscriptionPlans({
                 className={clsx(
                   "flex h-[353px] flex-col gap-8 rounded-lg bg-slate-2 px-6 py-12",
                   plan?.planId === currantPlan.planId
-                    ? "border-[3px] border-crimson-6"
+                    ? "border-[3px] border-primary"
                     : ""
                 )}
               >
                 <div className="flex flex-col gap-2">
-                  <h6 className="body-semibold text-slate-12">{plan?.name}</h6>
+                  <Typography
+                    variant="h6"
+                    component="h6"
+                    className="font-semibold"
+                  >
+                    {plan?.name}
+                  </Typography>
                   <div className="flex items-center gap-3">
-                    <h5 className="text-[32px] font-bold leading-9">
+                    <Typography
+                      variant="h4"
+                      component="h4"
+                      className="font-bold leading-9"
+                    >
                       ${(plan?.base as number) / 100}
-                    </h5>
+                    </Typography>
                     <div className="flex flex-col items-start">
-                      <span className="caption">
+                      <Typography
+                        variant="body"
+                        component="span"
+                        className="font-semibold"
+                      >
                         {plan?.currency.toUpperCase()}
-                      </span>
-                      <span className="caption-s text-slate-11">
+                      </Typography>
+                      <Typography variant="sm" component="span">
                         Billed {plan?.interval}
-                      </span>
+                      </Typography>
                     </div>
                   </div>
                 </div>
@@ -95,7 +97,9 @@ export default function SubscriptionPlans({
                             : "stroke-slate-11"
                         )}
                       />
-                      <p className="body text-slate-11">{feature}</p>
+                      <Typography variant="body" component="p">
+                        {feature}
+                      </Typography>
                     </div>
                   ))}
                 </div>

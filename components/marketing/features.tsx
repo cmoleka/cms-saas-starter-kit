@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 
@@ -16,12 +18,15 @@ type KeyFeaturesType = {
     title: string
     subTitle: string
     description: string
-    ctaLabel: string
-    ctaLink: string
+    ctaLabel?: string
+    ctaLink?: string
   }
-  rightContent: {
+  rightContent?: {
     imageSrc: string
     imageAlt: string
+  }
+  rightVideo?: {
+    videoSrc: string
   }
   reverse?: boolean
 }
@@ -29,27 +34,22 @@ type KeyFeaturesType = {
 const keyFeatures: KeyFeaturesType[] = [
   {
     leftContent: {
-      title: "Authentication",
-      subTitle:
-        "Secure and Easy-to-Use Authentication for Your SaaS Website and API",
+      title: "Authentication Flows",
+      subTitle: "Hassle-Free, Secure Authentication for Your SaaS Projects",
       description:
-        "Our authentication system is built on top of the industry-leading PaaS such as Supabase and Firebase. It is secure, easy-to-use, and fully customizable. It supports email/password, social logins, and more.",
-      ctaLabel: "Get Started",
-      ctaLink: "/signup",
+        "Streamline user authentication and access control using Clerk authentication, ensuring a hassle-free experience for your users.",
     },
-    rightContent: {
-      imageSrc:
-        "https://images.unsplash.com/photo-1651235732694-0d057ace2f30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      imageAlt: "Authentication",
+    rightVideo: {
+      videoSrc: "/assets/landing/authentication-flow.mp4",
     },
     reverse: false,
   },
   {
     leftContent: {
-      title: "Dashboard",
-      subTitle: "A fantastic dashboard to manage your SaaS business",
+      title: "Stripe Payments and Subscriptions",
+      subTitle: "Simplify Payment Processing",
       description:
-        "Our dashboard offers an overview of your SaaS business. It shows at a glance all you need to know about your business. It is fully customizable and extendable.",
+        "Seamlessly integrate Stripe, a leading payment processor, to effortlessly accept online payments without the hassle of building a payment gateway from scratch.",
       ctaLabel: "Get Started",
       ctaLink: "/signup",
     },
@@ -68,25 +68,37 @@ export default function Features() {
       Icon: Icons.user,
       title: "Authentication",
       description:
-        "Our Smart Inbox feature helps you manage your emails efficiently by prioritizing important emails.",
+        "Guard your app with Clerk authentication, ensuring robust security for user access and data protection.",
     },
     {
       Icon: Icons.theme,
-      title: "UI Themes",
+      title: "UI Components",
       description:
-        "Our Smart Inbox feature helps you manage your emails efficiently by prioritizing important emails.",
+        "Empower your creativity with Shadcn UI components, offering limitless customization possibilities for your app's design.",
     },
     {
       Icon: Icons.analytics,
       title: "Integrated Analytics",
       description:
-        "Our Smart Inbox feature helps you manage your emails efficiently by prioritizing important emails.",
+        "Gain insights and track user activity effectively using Vercel Analytics, keeping you informed about your app's performance.",
     },
     {
-      Icon: Icons.integrations,
-      title: "UI Components",
+      Icon: Icons.payment,
+      title: "Stripe Subscriptions",
       description:
-        "Our Smart Inbox feature helps you manage your emails efficiently by prioritizing important emails.",
+        "Simplify subscription management with Tier, leveraging the power of Stripe to handle your users' plans effortlessly.",
+    },
+    {
+      Icon: Icons.mobile,
+      title: "Mobile Friendly",
+      description:
+        "Delight users on any device with our mobile-friendly UI design, ensuring a seamless experience on smartphones and tablets.",
+    },
+    {
+      Icon: Icons.email,
+      title: "Custom Email",
+      description:
+        "Craft engaging, dynamic emails using JSX and React.Email, giving you full control over your email communication.",
     },
   ]
 
@@ -101,7 +113,7 @@ export default function Features() {
                 component="h2"
                 className="bg-gradient-to-r from-primary/50 to-primary bg-clip-text text-transparent dark:from-slate-100 dark:to-slate-500"
               >
-                Discover Our Unique Features
+                Discover Our Amazing Features
               </Typography>
               <Typography
                 variant="lead"
@@ -166,6 +178,7 @@ const FeaturedItem: React.FC<FeaturedItemProps> = ({
 const KeyFeature: React.FC<KeyFeaturesType> = ({
   leftContent,
   rightContent,
+  rightVideo,
   reverse,
 }) => {
   const layoutClasses = `flex flex-col lg:flex-row  py-6 md:py-12 ${
@@ -177,13 +190,17 @@ const KeyFeature: React.FC<KeyFeaturesType> = ({
       <div className="flex flex-col items-start p-4 lg:w-1/2">
         {leftContent && (
           <div className="mb-4">
-            <Typography variant="h2" component="h2" className="text-left">
+            <Typography variant="h1" component="h2" className="text-left">
               {leftContent.title}
             </Typography>
-            <Typography variant="lead" component="p" className="text-left">
+            <Typography
+              variant="lead"
+              component="p"
+              className="text-left font-semibold text-primary dark:text-primary"
+            >
               {leftContent.subTitle}
             </Typography>
-            <Typography variant="sm" component="p" className="mt-6 text-left">
+            <Typography variant="body" component="p" className="mt-6 text-left">
               {leftContent.description}
             </Typography>
           </div>
@@ -206,6 +223,21 @@ const KeyFeature: React.FC<KeyFeaturesType> = ({
               fill
               className="absolute rounded-md object-cover"
             />
+          </div>
+        )}
+        {rightVideo && (
+          <div>
+            <video
+              className="my-6 rounded-xl"
+              width="100%"
+              height="auto"
+              playsInline
+              autoPlay
+              loop
+              muted
+            >
+              <source src={rightVideo.videoSrc} type="video/mp4" />
+            </video>
           </div>
         )}
       </div>

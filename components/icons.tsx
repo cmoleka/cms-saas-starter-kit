@@ -3,6 +3,7 @@ import {
   BrushIcon,
   CheckSquareIcon,
   ChevronRightIcon,
+  CreditCard,
   Gem,
   InboxIcon,
   Laptop,
@@ -12,9 +13,11 @@ import {
   LogOut,
   LucideProps,
   Moon,
+  Send,
   Settings,
   SquareStackIcon,
   SunMedium,
+  Tablet,
   Twitter,
   User,
   type LucideIcon,
@@ -41,6 +44,9 @@ export const Icons = {
   login: LogIn,
   logout: LogOut,
   spinner: LoaderIcon,
+  mobile: Tablet,
+  payment: CreditCard,
+  email: Send,
   logo: (props: LucideProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
       <path

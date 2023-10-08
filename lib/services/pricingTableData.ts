@@ -1,7 +1,6 @@
-import type { PricingTableData, TierPlanModel, TierPricingData } from "@/types";
+import type { PricingTableData, TierPlanModel } from "@/types";
 import {
     TIER_BASE_FEATURE_ID,
-    TIER_EXTRACOPY_FEATURE_ID,
     tierFeatureConstants,
     tierPlanConstants,
 } from "@/config/tierConstants";
@@ -11,7 +10,7 @@ export const pullPricingTableData = async () => {
     // Pull the all the pricing model details from Tier Cloud
     const tierPricingData = await tier.pull();
 
-    const pricingTableData = tierPlanConstants
+    const pricingTableData: PricingTableData[] = tierPlanConstants
         .map((currentPlan) => {
             if (
                 currentPlan.planId &&
@@ -54,7 +53,7 @@ export const pullPricingTableData = async () => {
                 return {
                     planId: currentPlan.planId,
                     currency: "usd",
-                    interval: "monthly",
+                    interval: "Yearly",
                     promoted,
                     name,
                     base,
