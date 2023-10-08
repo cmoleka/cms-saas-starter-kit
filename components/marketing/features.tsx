@@ -44,22 +44,6 @@ const keyFeatures: KeyFeaturesType[] = [
     },
     reverse: false,
   },
-  {
-    leftContent: {
-      title: "Stripe Payments and Subscriptions",
-      subTitle: "Simplify Payment Processing",
-      description:
-        "Seamlessly integrate Stripe, a leading payment processor, to effortlessly accept online payments without the hassle of building a payment gateway from scratch.",
-      ctaLabel: "Get Started",
-      ctaLink: "/signup",
-    },
-    rightContent: {
-      imageSrc:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      imageAlt: "Dashboard",
-    },
-    reverse: true,
-  },
 ]
 
 export default function Features() {

@@ -65,7 +65,7 @@ export default async function IndexPage() {
         </div>
       </div>
       <Features />
-      <Pricings />
+      {/* <Pricings /> */}
     </>
   )
 }
