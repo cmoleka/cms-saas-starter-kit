@@ -3,8 +3,8 @@ import "@/styles/globals.css"
 import { ClerkProvider } from "@clerk/nextjs"
 import { Analytics } from "@vercel/analytics/react"
 
-import { inter } from "@/lib/fonts"
-import { cn, constructMetadata } from "@/lib/utils"
+import { dm_sans, inter } from "@/lib/fonts"
+import { constructMetadata } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import Navbar from "@/components/nav-bar"
 import Providers from "@/components/Providers"
@@ -20,15 +20,14 @@ interface RootLayoutProps {
 export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
+      <html
+        lang="en"
+        suppressHydrationWarning
+        className={`${inter.variable} ${dm_sans.variable}`}
+      >
         <head />
         <Providers>
-          <body
-            className={cn(
-              "min-h-screen bg-background font-sans antialiased",
-              inter.className
-            )}
-          >
+          <body className="min-h-screen bg-background font-sans antialiased">
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
