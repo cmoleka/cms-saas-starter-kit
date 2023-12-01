@@ -50,20 +50,11 @@ export default async function IndexPage() {
           Simplify Your Development Journey with Our Feature-Packed SaaS Starter
           Pack. Get Straight to Building Amazing Products.
         </Typography>
-        <div className="flex items-center gap-2 md:flex-row md:gap-4">
+        <div className="flex flex-col items-center gap-2 md:flex-row md:gap-4">
           <Button size="lg" variant="default" asChild>
             <Link href="/signup">
               Get Started
               <Icons.chevronRight className="ml-2 h-4 w-4 " />
-            </Link>
-          </Button>
-          <Button size="lg" variant="secondary" asChild>
-            <Link
-              href="https://github.com/cmoleka/cms-saas-starter-kit"
-              target="_blank"
-            >
-              View on Github
-              <Icons.gitHub className="ml-2 h-4 w-4 " />
             </Link>
           </Button>
         </div>
