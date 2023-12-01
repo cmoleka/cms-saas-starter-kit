@@ -50,7 +50,7 @@ export default async function IndexPage() {
           Simplify Your Development Journey with Our Feature-Packed SaaS Starter
           Pack. Get Straight to Building Amazing Products.
         </Typography>
-        <div className="flex flex-col items-center gap-2 md:flex-row md:gap-4">
+        <div className="flex flex-col items-center gap-4 md:flex-row">
           <Button size="lg" variant="default" asChild>
             <Link href="/signup">
               Get Started
